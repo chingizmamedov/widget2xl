@@ -1,0 +1,1593 @@
+
+.feedback-template {
+  margin: 0 auto;
+  font-size: 100%;
+  position: relative;
+  -moz-user-select: none;
+  transition: all 0.3s ease;
+
+  &.type-preview_widget {
+      div.lang-page {
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          .dimmer {
+            pointer-events: none;
+            user-select: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          }
+      
+          .customer-logo {
+            width: 100%;
+            position: absolute;
+            top: 20px;
+            right: 23px;
+            img {
+              max-height: 9vh;
+              max-width: 40%;
+              // margin: 20px;
+              position: relative;
+              z-index: 9;
+            }
+          }
+      
+          .left {
+            text-align: left !important;
+          }
+          .center {
+            text-align: center !important;
+          }
+          .right {
+            text-align: right !important;
+          }
+      
+          .content {
+            position: relative;
+            width: 90%;
+            margin: auto;
+      
+            .smiley {
+              margin-top: 23.5vh;
+              font-size: 20vw;
+            }
+      
+            .hide {
+              display: block !important;
+              opacity: 0 !important;
+            }
+      
+            .titles {
+              position: relative;
+              margin-top: 10px;
+              .lang-title {
+                // font-size: 4vw;
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                margin: auto;
+                transition: visibility 0s, opacity 0.5s linear;
+                width: 100%;
+                left: 0;
+                top: -20px;
+              }
+      
+              .show-title {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+      
+            .languages {
+              max-height: 22.3vh;
+              margin-top: 10vh;
+              .lang-item {
+                position: relative;
+                .flag {
+                  background-size: cover;
+                  max-width: 90%;
+                  margin: auto;
+                  img {
+                    max-height: 100%;
+                    margin-bottom: 2vh !important;
+                    max-width: 80%;
+                    border-radius: 5px;
+                  }
+                }
+                .lang-name {
+                  color: #fff;
+                  // font-size: 4vw;
+                }
+              }
+            }
+          }
+        }
+      &.size-sm, &.size-md {
+          width: 230px;
+          height: 348px;
+          font-size: 60%;
+  
+          .lang-page {
+              .smiley {
+                margin-top: 40px !important;
+                font-size: 70px !important;
+              }
+
+              
+              .titles {
+                margin-top: 0 !important;
+                .lang-title {
+                  margin-top: 10px !important;
+                }
+                .lang-title.s {
+                  font-size: 11px !important;
+                }
+                .lang-title.m {
+                  font-size: 14px !important;
+                  margin: auto !important;
+                }
+                .lang-title.l {
+                  font-size: 18px !important;
+                }
+              }
+      
+              .languages {
+                margin-top: 70px !important;
+                max-height: 100px !important;
+                .lang-name {
+                  margin: 0 !important;
+                }
+                .lang-name.s {
+                  font-size: 8px !important;
+                }
+                .lang-name.m {
+                  font-size: 10px !important;
+                  margin: auto !important;
+                }
+                .lang-name.l {
+                  font-size: 14px !important;
+                }
+              }
+            }
+
+          .services-title {
+              font-size: 10px !important;
+              padding: 3px !important;
+          }
+
+          .mark-page-title {
+              span {
+                  font-size: 9px !important;        
+              }
+          }
+
+          .mark-page-marks {
+              span {
+                  font-size: 10px !important;
+              }
+          }
+
+          .template-header {
+              .qmeter-logo {
+                  padding: 5px;
+                  min-width: 100px;
+                  max-width: 100px;
+                  img {
+                      width: 60px;
+                  }
+              }
+              .header-buttons {
+                  .h-b {
+                      padding: 0.6em;
+                      font-size: 10px;
+                      line-height: 10px;
+                  }
+              }
+          }
+  
+          .logo {
+              padding: 0.5em;
+              min-height: 0;
+              img {
+                  max-height: 52px;
+                  max-width: 95%;
+                  padding: 1px;
+                  margin: 7px;
+              }
+          }
+  
+          .service-title-outer {
+              margin-bottom: 6px;
+              max-height: 38px;
+              .services-title {
+                  width: 80%;
+                  padding: 0.42em;
+                  font-size: 10px;
+                  span {
+                      line-height: 16px;
+                  }
+              }
+          }
+  
+          .services-list {
+              overflow: auto;
+              &.more-than-five {
+              }
+              .service-item {
+                  min-height: 37px;
+                  .service-inner {
+                      span {
+                          font-size: 15px;
+                          line-height: 15px;
+                          padding: 0;
+                          margin-top: 4px;
+                      }
+                      .selected-rate {
+                          min-width: 60px;
+                          small {
+                              font-size: 10px;
+                              line-height: 10px;
+                              white-space: nowrap;
+                              text-align: center;
+                          }
+                      }
+
+                      .single-mode-rate-text {
+                          span {
+                              font-size: 12px !important;
+                          }
+                      }
+                  }
+                  .rate-options-outer {
+                      .rate-option-item {
+                          .qm-smile {
+                              font-size: 15px;
+                              line-height: 15px;
+                              padding: 0;
+                              margin-top: 4px;
+                          }
+                          small {
+                              font-size: 10px;
+                              line-height: 10px;
+                          }
+                      }
+                  }
+                  .single-service {
+                      margin-bottom: 0 !important;
+                      .services-title {
+                          font-size: 9.5px !important;
+                      }
+                  }
+              }
+          }
+          .form-control.comment-textbox {
+              height: 120px !important;
+          }
+          .thanks-text {
+              margin-top: 30px;
+          }
+  
+      }
+      &.size-sm {
+          .services-list {
+              &.more-than-five {
+              }
+              .service-item {
+                  min-height: 43px;
+                  .service-inner {
+                      span {
+                          font-size: 15px;
+                          line-height: 15px;
+                      }
+                  }
+              }
+          }
+      }
+      &.landscape {
+          &.tablet {
+              background-image: url("/images/tablet-ca-landscape.png");
+              &.size-md {
+                  padding: 19px 54px;
+  
+                  .services-list {
+                      .service-item {
+                          .service-inner {
+                              .single-mode-rate-smile {
+                                  margin-bottom: 5px;
+                                  span {
+                                      font-size: 55px;
+                                  }
+                              }
+                          }
+                      }
+                  }
+  
+                  .mark-page-content {
+                      position: absolute;
+                      top: 19px;
+                      right: 54px;
+                      bottom: 19px;
+                      left: 54px;
+                  }
+              }
+          }
+          &.size-md {
+              width: 530px;
+              height: 357px;
+  
+              &.type-preview_widget {
+                  .logo {
+                      img {
+                          max-height: 90%;
+                          max-width: 90%;
+                      }
+                  }
+              }
+  
+              .services-list {
+                  .service-item {
+                      min-height: 47px;
+                      .rate-options-outer {
+                          .rate-option-item {
+                              .qm-smile {
+                                  font-size: 17px;
+                                  line-height: 17px;
+                                  margin-top: 3px;
+                              }
+                              small {
+                                  font-size: 12px;
+                                  line-height: 14px;
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+      &.size-md {
+          width: 273px;
+          height: 426px;
+  
+          .contacts-page, .comments-page {
+              form {
+                  margin-top: 5px;
+              }
+  
+              .service-title-outer {
+                  margin-bottom: 0;
+                  .services-title {
+                      font-size: 9.5px;
+                  }
+              }
+          }
+          .contacts-page {
+              .submit-button {
+                  min-width: 85% !important;
+                  padding: 5px !important;
+                  font-size: 7px !important; 
+              }
+          }
+          .form-control {
+              height: 25px;
+              min-height: 25px;
+              line-height: 12px;
+              font-size: 11px;
+              padding-left: 5px;
+          }
+          .form-group {
+              margin-bottom: 0px;
+          }
+          .btn {
+              padding: 3px 7px;
+              font-size: 10px;
+          }
+  
+          .logo {
+              padding: 0.5em;
+              min-height: 0;
+              img {
+                  max-height: 42px;
+                  max-width: 95%;
+                  padding: 1px;
+                  margin: 5px;
+              }
+          }
+      }
+      &.size-xs {
+          > div {
+              border-width: 2px !important;
+          }
+          width: 40px !important;
+          height: 48px !important;
+          font-size: 13% !important;
+          margin: auto;
+          border: 2px solid #ddd;
+          .template-header {
+              .qmeter-logo {
+                  padding: 1px !important;
+                  img {
+                      width: 10px !important;
+                  }
+              }
+              .header-buttons {
+                  .h-b {
+                      padding: 0.15em !important;
+                      font-size: 0.2em !important;
+                      line-height: 0.2em !important;
+                  }
+              }
+          }
+  
+          .logo {
+              padding: 0.1em !important;
+              min-height: 0 !important;
+              img {
+                  max-height: 3px !important;
+                  max-width: 90% !important;
+              }
+          }
+          .service-title-outer {
+              margin-bottom: 1px !important;
+              padding: 0 !important;
+              height: 5px !important;
+              border-radius: 0 !important;
+              .services-title {
+                  width: 90% !important;
+                  padding: 0 !important;
+                  font-size: 2px !important;
+                  border-radius: 0 !important;
+              }
+          }
+          .services-list {
+              font-size: 100% !important;
+              &.more-than-five {
+              }
+              .service-item {
+                  margin-top: 0 !important;
+                  min-height: 5px !important;
+                  .service-inner {
+                      margin-top: 0 !important;
+                      span {
+                          font-size: 1em !important;
+                          line-height: 1em !important;
+                          padding: 0 !important;
+                          text-align: center !important;
+                      }
+                  }
+              }
+          }
+      }
+  }
+  
+
+  &.type-web_widget,
+  &.type-marketing_widget {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  .template-header {
+    .qmeter-logo {
+      padding: 0.8vh;
+      img {
+        max-height: 75%;
+        max-width: 85%;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    .header-buttons {
+      .h-b {
+        padding: 0 1.45em;
+        font-size: 2.5vh;
+        line-height: 2.5vh;
+        cursor: pointer;
+      }
+    }
+  }
+  .customer-name {
+    font-size: 3.5vh;
+    text-align: center;
+    font-weight: bold;
+  }
+  .logo {
+    img {
+      max-height: 85%;
+      max-width: 89%;
+    }
+  }
+
+
+}
+  .checkbox-container {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    padding-right: 13px;
+    padding-left: 13px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .checkmark {
+      position: absolute;
+      border: 1px solid #aaa;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      border-radius: 6px;
+      width: 25px;
+      height: 25px;
+    }
+
+    &:hover input ~ .checkmark {
+      background-color: #fff;
+    }
+    input:checked ~ .checkmark {
+      background-color: #a1c058;
+      border: 1px solid #a1c058;
+    }
+  
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+    .checkmark:after {
+      left: 9px;
+      top: 3px;
+      width: 6px;
+      height: 14px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+
+  .service-title-outer {
+    max-height: 22%;
+    margin-bottom: 10px;
+    .services-title {
+      min-width: 82%;
+      max-width: 89%;
+      padding: 2vh 1.09vh;
+      font-size: 2.5vh;
+      border-radius: 6px;
+      overflow: hidden;
+      span {
+        line-height: 3vh;
+      }
+    }
+  }
+
+  .comments-page {
+    .submit-button {
+      margin-top: 5vh;
+    }
+
+    .comment-textbox{ 
+      margin-top: 2vh;
+      padding: 2vh;
+    }
+  }
+
+  .contacts-page,
+  .comments-page {
+    .form-control {
+      height: 7.7vh;
+      min-height: 32px;
+      font-size: 2.3vh;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      padding-left: 2vw;
+    }
+    form {
+      margin-top: 3vh;
+    }
+    ::placeholder {
+      color: #9e9fa3;
+    }
+    .submit-button {
+      min-width: 25vw;
+      padding: 2vh;
+      font-size: 2.5vh;
+      border-radius: 6px;
+    }
+
+    .skip-button {
+      font-size: 2.5vh;
+    }
+  }
+
+  button.btn {
+    padding: 1.2vh 2.5vh;
+    font-size: 1.89vh;
+    text-transform: none;
+  }
+
+  .thanks-text {
+    margin-top: 15vh;
+    line-height: normal;
+  }
+
+  .form-control.comment-textbox {
+    height: 26vh;
+  }
+
+  .services-list {
+    &.more-than-five {
+      .service-item {
+        min-height: 63px;
+      }
+    }
+    .service-item {
+      -ms-flex: 1 0 20%;
+      flex: 1 0 20%;
+      max-width: 100%;
+      min-height: 20%;
+      box-sizing: border-box;
+
+      position: relative;
+      .service-inner {
+        position: relative;
+        z-index: 10;
+        margin-top: 1px;
+        span {
+          font-size: 3vh;
+          line-height: 3vh;
+          padding: 0 4.7vw;
+          text-align: center;
+          span {
+            padding-right: 8px;
+          }
+        }
+        .selected-rate {
+          min-width: 21.2vw;
+          cursor: pointer;
+          span {
+            margin-top: 7px;
+            font-size: 4vh;
+            line-height: 2.5vh;
+          }
+          small {
+            font-size: 2vh;
+            line-height: 4vh;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+      .rate-options-outer {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+        .rate-option-item {
+          //font-size: 2.2em;
+          cursor: pointer;
+          &:active {
+            background-color: rgba(255, 255, 255, 0.18);
+          }
+          .qm-smile {
+            margin-top: 7px;
+            font-size: 4vh;
+            line-height: 2vh;
+          }
+          small {
+            font-size: 2vh;
+            line-height: 4.2vh;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .mark-page-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1330;
+    background-color: rgba(0, 0, 0, 0.62);
+  }
+
+  &.size-md {
+    .mark-page-content {
+      position: absolute;
+      top: 47px;
+      right: 10px;
+      bottom: 46px;
+      left: 10px;
+    }
+    .mark-page {
+      margin-top: 30px;
+      width: 77%;
+    }
+
+    .mark-page-marks {
+      .mark {
+        height: 39px;
+        min-height: 39px;
+        span {
+          font-size: 14px;
+          line-height: 14px;
+        }
+      }
+    }
+    .mark-page-rate {
+      width: 100%;
+      height: 58px;
+      .mn-rate-icon {
+        font-size: 4.7em;
+      }
+    }
+    .mark-page-title {
+      margin: 0 auto 8px;
+      font-size: 1.5em;
+      padding: 0.4em;
+      max-height: 40px;
+    }
+  }
+
+  .single-mode-rate-item {
+    .single-mode-rate-smile {
+      width: 37%;
+      text-align: end;
+    }
+    .single-mode-rate-text {
+      margin-inline-start: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: start;
+      width: 63%;
+    }
+    &.without-labels {
+      .single-mode-rate-smile {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &.portrait.size-lg {
+    &.single-service{
+      div.single-mode-rate-text > span {
+        font-size: 2.8vh !important;
+      }
+
+      .services-title {
+        font-size: 2.3vh !important;
+        padding: 1.5vh 1.09vh !important;
+      }
+    }
+
+    .contacts-page {
+      .contact-form {
+        margin-top: 2vh;
+      }
+
+      .form-control {
+        height: 7vh;
+      }
+      .gender-selection-box {
+        height: 7vh;
+        i {
+          font-size: 4vh !important;
+        }
+      }
+
+      .submit-button {
+        padding: 1.0vh;
+        font-size: 2vh;
+      }
+
+      .skip-button {
+        font-size: 2vh;
+      }
+    }
+  
+    
+  }
+
+  &.landscape {
+    .mark-page {
+      min-width: 85%;
+    }
+    .services-list {
+      .service-inner {
+        .single-mode-rate-item {
+          .single-mode-rate-smile {
+            width: auto;
+            text-align: center;
+          }
+          .single-mode-rate-text {
+            width: auto;
+            margin-left: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .top-side {
+      height: 70% !important;
+    }
+
+    // landscape frame
+    @media only screen and (min-width: 1025px) {
+      .lang-page {
+        .smiley {
+          margin-top: 23.5vh !important;
+          font-size: 13vh !important;
+        }
+      
+        .titles {
+          .lang-title.s {
+            font-size: 2.5vh !important;
+          }
+          .lang-title.m {
+            font-size: 3vh !important;
+          }
+          .lang-title.l {
+            font-size: 3.5vh !important;
+          }
+        }
+
+        .languages {
+          margin-top: 9.9vh !important;
+          max-height: 15vh !important;
+          .lang-name.s {
+            font-size: 1.5vh !important;
+          }
+          .lang-name.m {
+            font-size: 2vh !important;
+          }
+          .lang-name.l {
+            font-size: 2.5vh !important;
+          }
+        }
+      }
+      &.type-marketing_widget,
+      &.type-web_widget {
+        &.single-service {
+          .services-page,
+          .rates-page {
+            .service-title-outer {
+              margin: 10px 0 20px 0;
+              .services-title {
+                min-width: 50%;
+                padding: 2.2vh 1.09vh;
+                font-size: 3.2vh;
+              }
+            }
+          }
+        }
+
+        .services-list {
+          .service-inner {
+            .single-mode-rate-item {
+              padding: 0 1.5vw;
+              .single-mode-rate-smile {
+                span {
+                  // font-size: 13.5vw;
+                  // line-height: 13.5vw;
+                  font-size: 17vh;
+                  line-height: 17vh;
+                  padding: 0;
+                }
+              }
+              .single-mode-rate-text {
+                // line-height: 6.5vw;
+                line-height: 4vh;
+                span {
+                  // font-size: 3.5vw;
+                  font-size: 4vh;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // landscape full screen
+    @media only screen and (max-width: 1025px) {
+      .lang-page {
+        .smiley {
+          margin-top: 23.5vh !important;
+          font-size: 19vh !important;
+        }
+
+        .titles {
+          .lang-title.s {
+            font-size: 4vh !important;
+          }
+          .lang-title.m {
+            font-size: 5vh !important;
+          }
+          .lang-title.l {
+            font-size: 6vh !important;
+          }
+        }
+
+        .languages {
+          margin-top: 14.9vh !important;
+          max-height: 18vh !important;
+          .lang-name.s {
+            font-size: 2.5px !important;
+          }
+          .lang-name.m {
+            font-size: 3vh !important;
+          }
+          .lang-name.l {
+            font-size: 3.5vh !important;
+          }
+        }
+      }
+
+      .top-side {
+        height: 63% !important;
+      }
+
+      &.single-service {
+        .services-page,
+        .rates-page {
+          .service-title-outer {
+            margin: 10px 0 20px 0;
+            .services-title {
+              min-width: 50%;
+              padding: 2.2vh 1.09vh;
+              font-size: 3.2vh;
+            }
+          }
+        }
+      }
+
+      .services-list {
+        .service-inner {
+          .single-mode-rate-item {
+            padding: 0 1.5vw;
+            .single-mode-rate-smile {
+              span {
+                // font-size: 13.5vw;
+                // line-height: 13.5vw;
+                font-size: 17vh;
+                line-height: 17vh;
+                padding: 0;
+              }
+            }
+            .single-mode-rate-text {
+              // line-height: 6.5vw;
+              line-height: 4vh;
+              span {
+                // font-size: 3.5vw;
+                font-size: 4vh;
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .contacts-page {
+        .service-title-outer {
+          margin: 10px 0 20px 0;
+          .services-title {
+            min-width: 90%;
+            padding: 2.2vh 1.09vh;
+            font-size: 3.2vh;
+          }
+        }
+        .contact-form {
+          margin-top: 0vh;
+        }
+      }
+
+      .comments-page {
+        .service-title-outer {
+          margin: 10px 0 20px 0;
+          .services-title {
+            min-width: 90%;
+            padding: 2.2vh 1.09vh;
+            font-size: 2.8vh;
+          }
+        }
+      }
+
+      .terms-label {
+        u {
+          text-decoration: none !important;
+
+          i {
+            font-size: 2.1vh;
+            line-height: 2.1vh;
+            margin: 0vh 10px;
+          }
+        }
+      }
+    }
+  }
+
+  div.lang-page {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    .dimmer {
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .customer-logo {
+      width: 100%;
+      position: absolute;
+      top: 20px;
+      right: 23px;
+      img {
+        max-height: 9vh;
+        max-width: 40%;
+        // margin: 20px;
+        position: relative;
+        z-index: 9;
+      }
+    }
+
+    .left {
+      text-align: left !important;
+    }
+    .center {
+      text-align: center !important;
+    }
+    .right {
+      text-align: right !important;
+    }
+
+    .content {
+      position: relative;
+      width: 90%;
+      margin: auto;
+
+      .smiley {
+        margin-top: 23.5vh;
+        font-size: 20vw;
+      }
+
+      .hide {
+        display: block !important;
+        opacity: 0 !important;
+      }
+
+      .titles {
+        position: relative;
+        margin-top: 5vh;
+        .lang-title {
+          // font-size: 4vw;
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          margin: auto;
+          transition: visibility 0s, opacity 0.5s linear;
+          width: 100%;
+          left: 0;
+          top: 0;
+        }
+
+        .show-title {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .languages {
+        max-height: 22.3vh;
+        margin-top: 10vh;
+        .lang-item {
+          position: relative;
+          .flag {
+            background-size: cover;
+            max-width: 90%;
+            margin: auto;
+            img {
+              max-height: 100%;
+              margin-bottom: 2vh !important;
+              max-width: 80%;
+              border-radius: 5px;
+            }
+          }
+          .lang-name {
+            color: #fff;
+            // font-size: 4vw;
+          }
+        }
+      }
+    }
+  }
+
+  .mark-page-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .mark-page {
+    background-color: #fff;
+    min-width: 88%;
+    margin: 45px 6% 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+  }
+  .mark-page-rate {
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    padding-top: 1em;
+    .mn-rate-icon {
+      font-size: 5em;
+    }
+  }
+  .mark-page-rate md-icon {
+    color: #647c8c;
+    font-size: 5.4em;
+    padding-top: 10px;
+  }
+  .mark-page-title {
+    max-width: 90%;
+    padding: 1em 1.7em;
+    margin: 0.4em auto 1em;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #647c8c;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    .md-headline {
+      font-size: 2.5vh;
+      line-height: 2.6vh;
+      max-height: 5vh;
+      overflow: hidden;
+      display: block;
+    }
+  }
+  .mark-page-marks {
+    max-height: 48vh;
+    overflow: auto;
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+  .mark-page-marks .mark {
+    margin-bottom: 1px;
+    background-color: transparent;
+    min-height: 12vh;
+    position: relative;
+    z-index: 4;
+    color: #fff;
+    padding: 1px 1px 0px 1px;
+    .mark-bg {
+      display: flex;
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  .mark-page-marks .mark span {
+    font-size: 2.5vh;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .gender-selection-box {
+    border: 1px solid #898989;
+    color: #818286;
+    border-radius: 6px;
+    height: 7.5vh;
+    padding: 0;
+    background-color: #ffffff;
+    &:hover {
+      color: #fff;
+    }
+    &.active {
+      color: #ffffff;
+    }
+    &:hover,
+    &.active {
+      &.male {
+        border-color: #2d90d3;
+        background: #2d90d3;
+        color: #fff;
+      }
+      &.female {
+        border-color: #e1597f;
+        background: #e1597f;
+        color: #fff;
+      }
+    }
+
+    .gender {
+      cursor: pointer;
+      margin: 0;
+      i {
+        font-size: 5vh;
+        line-height: 1vh;
+        position: relative;
+      }
+    }
+  }
+  .form-group {
+    margin-bottom: 0;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  &.size-md {
+    .mark-page-marks {
+      max-height: 162px;
+    }
+    .gender-selection-box {
+      width: 30px;
+      height: 25px;
+      .gender {
+        i {
+          font-size: 14px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+  &.tablet {
+    padding: 63px 30px 45px;
+    background-image: url("/images/tablet-ca.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    overflow: hidden;
+    &.size-md {
+      padding: 47px 13px;
+    }
+    .services-page,
+    .rates-page,
+    .contacts-page,
+    .comments-page {
+      border-width: 0 !important;
+    }
+  }
+  *:not(input, textarea, select) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+  .services-page,
+  .rates-page,
+  .contacts-page {
+    border-top-width: 4px !important;
+  }
+
+  .contacts-page,
+  .comments-page {
+    .service-title-outer {
+      max-height: 7.4vh;
+      margin-bottom: 0;
+      .services-title {
+        span {
+          line-height: 2.8vh;
+        }
+      }
+    }
+  }
+}
+
+//@media screen and (max-height: 440px) {
+//    .feedback-template.type-web_widget,
+//    .feedback-template.type-marketing_widget {
+//        .contacts-page, .comments-page {
+//            .start {
+//                height: 400px !important;
+//            }
+//            .end {
+//                height: 238px !important;
+//                overflow: auto;
+//            }
+//            .service-title-outer {
+//                .services-title {
+//                    font-size: 3.4vh;
+//                }
+//            }
+//            .form-control {
+//                height: 10vh;
+//                min-height: 32px;
+//                font-size: 3.6vh;
+//            }
+//
+//            button.btn {
+//                padding: 1.6vh 2.9vh;
+//                font-size: 3.19vh;
+//            }
+//        }
+//    }
+//}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .fullheight {
+    height: 768px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .fullheight {
+    height: 1024px;
+  }
+}
+/* iphone5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 320px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 568px;
+  }
+}
+/* iPhone 4 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 320px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  &.type-marketing_widget,
+  &.type-web_widget {
+
+    &.single-service {
+      .services-page,
+      .rates-page {
+        .service-title-outer {
+          margin: 10px 0 20px 0;
+          .services-title {
+            min-width: 50%;
+            padding: 2.2vh 4.09vh;
+            font-size: 3vh;
+          }
+        }
+      }
+    }
+
+    .lang-page {
+      .titles {
+        .lang-title.s {
+          font-size: 4vh !important;
+        }
+        .lang-title.m {
+          font-size: 5vh !important;
+        }
+        .lang-title.l {
+          font-size: 6vh !important;
+        }
+      }
+
+      .languages {
+        margin-top: 14.9vh !important;
+        max-height: 18vh !important;
+        .lang-name.s {
+          font-size: 2.5px !important;
+        }
+        .lang-name.m {
+          font-size: 3vh !important;
+        }
+        .lang-name.l {
+          font-size: 3.5vh !important;
+        }
+      }
+    }
+
+    .services-list {
+      .service-inner {
+        .single-mode-rate-item {
+          padding: 0 1.5vw;
+          .single-mode-rate-smile {
+            span {
+              // font-size: 13.5vw;
+              // line-height: 13.5vw;
+              font-size: 6vh;
+              line-height: 6vh;
+              padding: 0;
+            }
+          }
+          .single-mode-rate-text {
+            // line-height: 6.5vw;
+            line-height: 3vh;
+            span {
+              // font-size: 3.5vw;
+              font-size: 3vh;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .feedback-template.type-web_widget,
+  .feedback-template.type-marketing_widget {
+    .services-title {
+      padding: 1vh 1.09vh;
+      max-width: 89%;
+      font-size: 2.5vh;
+      span: {
+        line-height: 2.5vh;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  
+  .template-page-body {
+    background-color: rgba(0, 0, 0, 0.09);
+  }
+  .feedback-template.type-web_widget,
+  .feedback-template.type-marketing_widget {
+    &.single-service {
+      max-width: 67vw;
+      max-height: 83vh;
+      margin-top: 8.5vh;
+    }
+    max-width: 60vw;
+    max-height: 90vh;
+    margin-top: 5vh;
+    //margin-top: 5vh;
+    .gender-group {
+      > div {
+        font-size: 2.1vh;
+      }
+    }
+    .end {
+      overflow-y: auto;
+    }
+      .submit-button {
+          font-size: 3vh !important;
+          padding: 1vh !important;
+      }
+  }
+
+  .modal-container.size-lg {
+    &.single-service {
+      width: 53vw;
+    }
+    width: 47vw;
+    position: relative;
+    height: 100vh;
+    margin: auto;
+  }
+  .feedback-template .contacts-page .form-control,
+  .feedback-template .comments-page .form-control {
+    height: 5.7vh;
+    min-height: 32px;
+    font-size: 1.8vh;
+  }
+  .feedback-template .form-control.comment-textbox {
+    height: 20vh;
+  }
+  .feedback-template
+    .services-list
+    .service-item
+    .service-inner
+    .selected-rate {
+    min-width: 8.5vw;
+  }
+  .feedback-template .services-list .service-item .service-inner span {
+    padding: 0;
+  }
+  .feedback-template .gender-selection-box {
+    height: 5.7vh;
+  }
+  .qmeter-logo {
+    width: 120px !important;
+    max-width: 120px !important;
+  }
+  .feedback-template .template-header .qmeter-logo img {
+    max-height: 92%;
+    max-width: 92%;
+  }
+
+  .titles {
+    .lang-title.s {
+      font-size: 4vh !important;
+    }
+    .lang-title.m {
+      font-size: 5vh !important;
+    }
+    .lang-title.l {
+      font-size: 6vh !important;
+    }
+  }
+
+  .languages {
+    margin-top: 14.9vh !important;
+    max-height: 18vh !important;
+    .lang-name.s {
+      font-size: 2.5px !important;
+    }
+    .lang-name.m {
+      font-size: 3vh !important;
+    }
+    .lang-name.l {
+      font-size: 3.5vh !important;
+    }
+  }
+}
+
+.services-top-container {
+  > div {
+    > div:last-child {
+      z-index: 999999999999;
+    }
+  }
+}
+
+.hide-qmeter-logo .qmeter-logo {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}

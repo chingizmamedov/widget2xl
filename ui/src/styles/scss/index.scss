@@ -1,0 +1,41 @@
+body {
+    background: transparent;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.full-absolute {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.vh100 {
+    height: 100vh;
+}
+
+.loader {
+    display: inline-block;
+}
+
+.ball-clip-rotate-multiple {
+    > div {
+        border-left-color: #444a59;
+        border-right-color: #444a59;
+    }
+    > div:last-child {
+        border-color: #444a59 transparent #444a59 transparent;
+    }
+}
+
+@import "feedback-template";

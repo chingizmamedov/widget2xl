@@ -1,0 +1,38 @@
+{
+  "name": "webwidget",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "6.9.1",
+    "npm": "4.0.2",
+    "yarn": "1.1.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "core-js": "^2.5.3",
+    "express": "^4.16.2",
+    "js-cookie": "^2.2.0",
+    "loaders.css": "^0.1.2",
+    "prop-types": "^15.6.0",
+    "react": "15.4.2",
+    "react-angular-http-resource": "^0.3.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "15.4.2",
+    "react-loaders": "^3.0.1",
+    "react-modal-bootstrap": "^1.1.1",
+    "react-router-dom": "^4.2.2",
+    "moment": "2.17.1",
+    "moment-timezone": "0.5.11",
+    "react-rte": "^0.16.1",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "node ./server/app.js",
+    "start-ui": "cd ./ui && yarn run start",
+    "build": "cd ./ui && yarn run build",
+    "postinstall": "yarn run build"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3"
+  }
+}

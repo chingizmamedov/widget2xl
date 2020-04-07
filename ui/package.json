@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "../node_modules/.bin/react-scripts start",
+    "build": "../node_modules/.bin/react-scripts build",
+    "test": "../node_modules/.bin/react-scripts test --env=jsdom",
+    "eject": "../node_modules/.bin/react-scripts eject",
+    "build-css": "../node_modules/node-sass-chokidar/bin/node-sass-chokidar src/styles/scss/index.scss src/styles/main.css --output-style expanded",
+    "watch-css": "npm run build-css && ../node_modules/node-sass-chokidar/bin/node-sass-chokidar src/styles/scss/index.scss  src/styles/main.css --watch --output-style expanded"
+  }
+}

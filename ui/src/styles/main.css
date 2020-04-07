@@ -1,0 +1,1548 @@
+body {
+  background: transparent;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.full-absolute {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.loader {
+  display: inline-block;
+}
+
+.ball-clip-rotate-multiple > div {
+  border-left-color: #444a59;
+  border-right-color: #444a59;
+}
+
+.ball-clip-rotate-multiple > div:last-child {
+  border-color: #444a59 transparent #444a59 transparent;
+}
+
+.feedback-template {
+  margin: 0 auto;
+  font-size: 100%;
+  position: relative;
+  -moz-user-select: none;
+  transition: all 0.3s ease;
+}
+
+.feedback-template.type-preview_widget div.lang-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.feedback-template.type-preview_widget div.lang-page .dimmer {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.feedback-template.type-preview_widget div.lang-page .customer-logo {
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  right: 23px;
+}
+
+.feedback-template.type-preview_widget div.lang-page .customer-logo img {
+  max-height: 9vh;
+  max-width: 40%;
+  position: relative;
+  z-index: 9;
+}
+
+.feedback-template.type-preview_widget div.lang-page .left {
+  text-align: left !important;
+}
+
+.feedback-template.type-preview_widget div.lang-page .center {
+  text-align: center !important;
+}
+
+.feedback-template.type-preview_widget div.lang-page .right {
+  text-align: right !important;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .smiley {
+  margin-top: 23.5vh;
+  font-size: 20vw;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .hide {
+  display: block !important;
+  opacity: 0 !important;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .titles {
+  position: relative;
+  margin-top: 10px;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .titles .lang-title {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  margin: auto;
+  transition: visibility 0s, opacity 0.5s linear;
+  width: 100%;
+  left: 0;
+  top: -20px;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .titles .show-title {
+  visibility: visible;
+  opacity: 1;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .languages {
+  max-height: 22.3vh;
+  margin-top: 10vh;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .languages .lang-item {
+  position: relative;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .languages .lang-item .flag {
+  background-size: cover;
+  max-width: 90%;
+  margin: auto;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .languages .lang-item .flag img {
+  max-height: 100%;
+  margin-bottom: 2vh !important;
+  max-width: 80%;
+  border-radius: 5px;
+}
+
+.feedback-template.type-preview_widget div.lang-page .content .languages .lang-item .lang-name {
+  color: #fff;
+}
+
+.feedback-template.type-preview_widget.size-sm, .feedback-template.type-preview_widget.size-md {
+  width: 230px;
+  height: 348px;
+  font-size: 60%;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .smiley, .feedback-template.type-preview_widget.size-md .lang-page .smiley {
+  margin-top: 40px !important;
+  font-size: 70px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .titles, .feedback-template.type-preview_widget.size-md .lang-page .titles {
+  margin-top: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .titles .lang-title, .feedback-template.type-preview_widget.size-md .lang-page .titles .lang-title {
+  margin-top: 10px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .titles .lang-title.s, .feedback-template.type-preview_widget.size-md .lang-page .titles .lang-title.s {
+  font-size: 11px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .titles .lang-title.m, .feedback-template.type-preview_widget.size-md .lang-page .titles .lang-title.m {
+  font-size: 14px !important;
+  margin: auto !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .titles .lang-title.l, .feedback-template.type-preview_widget.size-md .lang-page .titles .lang-title.l {
+  font-size: 18px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .languages, .feedback-template.type-preview_widget.size-md .lang-page .languages {
+  margin-top: 70px !important;
+  max-height: 100px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .languages .lang-name, .feedback-template.type-preview_widget.size-md .lang-page .languages .lang-name {
+  margin: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .languages .lang-name.s, .feedback-template.type-preview_widget.size-md .lang-page .languages .lang-name.s {
+  font-size: 8px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .languages .lang-name.m, .feedback-template.type-preview_widget.size-md .lang-page .languages .lang-name.m {
+  font-size: 10px !important;
+  margin: auto !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .lang-page .languages .lang-name.l, .feedback-template.type-preview_widget.size-md .lang-page .languages .lang-name.l {
+  font-size: 14px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-title, .feedback-template.type-preview_widget.size-md .services-title {
+  font-size: 10px !important;
+  padding: 3px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .mark-page-title span, .feedback-template.type-preview_widget.size-md .mark-page-title span {
+  font-size: 9px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .mark-page-marks span, .feedback-template.type-preview_widget.size-md .mark-page-marks span {
+  font-size: 10px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .template-header .qmeter-logo, .feedback-template.type-preview_widget.size-md .template-header .qmeter-logo {
+  padding: 5px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.feedback-template.type-preview_widget.size-sm .template-header .qmeter-logo img, .feedback-template.type-preview_widget.size-md .template-header .qmeter-logo img {
+  width: 60px;
+}
+
+.feedback-template.type-preview_widget.size-sm .template-header .header-buttons .h-b, .feedback-template.type-preview_widget.size-md .template-header .header-buttons .h-b {
+  padding: 0.6em;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.feedback-template.type-preview_widget.size-sm .logo, .feedback-template.type-preview_widget.size-md .logo {
+  padding: 0.5em;
+  min-height: 0;
+}
+
+.feedback-template.type-preview_widget.size-sm .logo img, .feedback-template.type-preview_widget.size-md .logo img {
+  max-height: 52px;
+  max-width: 95%;
+  padding: 1px;
+  margin: 7px;
+}
+
+.feedback-template.type-preview_widget.size-sm .service-title-outer, .feedback-template.type-preview_widget.size-md .service-title-outer {
+  margin-bottom: 6px;
+  max-height: 38px;
+}
+
+.feedback-template.type-preview_widget.size-sm .service-title-outer .services-title, .feedback-template.type-preview_widget.size-md .service-title-outer .services-title {
+  width: 80%;
+  padding: 0.42em;
+  font-size: 10px;
+}
+
+.feedback-template.type-preview_widget.size-sm .service-title-outer .services-title span, .feedback-template.type-preview_widget.size-md .service-title-outer .services-title span {
+  line-height: 16px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list, .feedback-template.type-preview_widget.size-md .services-list {
+  overflow: auto;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item, .feedback-template.type-preview_widget.size-md .services-list .service-item {
+  min-height: 37px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .service-inner span, .feedback-template.type-preview_widget.size-md .services-list .service-item .service-inner span {
+  font-size: 15px;
+  line-height: 15px;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .service-inner .selected-rate, .feedback-template.type-preview_widget.size-md .services-list .service-item .service-inner .selected-rate {
+  min-width: 60px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .service-inner .selected-rate small, .feedback-template.type-preview_widget.size-md .services-list .service-item .service-inner .selected-rate small {
+  font-size: 10px;
+  line-height: 10px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .service-inner .single-mode-rate-text span, .feedback-template.type-preview_widget.size-md .services-list .service-item .service-inner .single-mode-rate-text span {
+  font-size: 12px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .rate-options-outer .rate-option-item .qm-smile, .feedback-template.type-preview_widget.size-md .services-list .service-item .rate-options-outer .rate-option-item .qm-smile {
+  font-size: 15px;
+  line-height: 15px;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .rate-options-outer .rate-option-item small, .feedback-template.type-preview_widget.size-md .services-list .service-item .rate-options-outer .rate-option-item small {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .single-service, .feedback-template.type-preview_widget.size-md .services-list .service-item .single-service {
+  margin-bottom: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .single-service .services-title, .feedback-template.type-preview_widget.size-md .services-list .service-item .single-service .services-title {
+  font-size: 9.5px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .form-control.comment-textbox, .feedback-template.type-preview_widget.size-md .form-control.comment-textbox {
+  height: 120px !important;
+}
+
+.feedback-template.type-preview_widget.size-sm .thanks-text, .feedback-template.type-preview_widget.size-md .thanks-text {
+  margin-top: 30px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item {
+  min-height: 43px;
+}
+
+.feedback-template.type-preview_widget.size-sm .services-list .service-item .service-inner span {
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.feedback-template.type-preview_widget.landscape.tablet {
+  background-image: url("/images/tablet-ca-landscape.png");
+}
+
+.feedback-template.type-preview_widget.landscape.tablet.size-md {
+  padding: 19px 54px;
+}
+
+.feedback-template.type-preview_widget.landscape.tablet.size-md .services-list .service-item .service-inner .single-mode-rate-smile {
+  margin-bottom: 5px;
+}
+
+.feedback-template.type-preview_widget.landscape.tablet.size-md .services-list .service-item .service-inner .single-mode-rate-smile span {
+  font-size: 55px;
+}
+
+.feedback-template.type-preview_widget.landscape.tablet.size-md .mark-page-content {
+  position: absolute;
+  top: 19px;
+  right: 54px;
+  bottom: 19px;
+  left: 54px;
+}
+
+.feedback-template.type-preview_widget.landscape.size-md {
+  width: 530px;
+  height: 357px;
+}
+
+.feedback-template.type-preview_widget.landscape.size-md.type-preview_widget .logo img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
+.feedback-template.type-preview_widget.landscape.size-md .services-list .service-item {
+  min-height: 47px;
+}
+
+.feedback-template.type-preview_widget.landscape.size-md .services-list .service-item .rate-options-outer .rate-option-item .qm-smile {
+  font-size: 17px;
+  line-height: 17px;
+  margin-top: 3px;
+}
+
+.feedback-template.type-preview_widget.landscape.size-md .services-list .service-item .rate-options-outer .rate-option-item small {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.feedback-template.type-preview_widget.size-md {
+  width: 273px;
+  height: 426px;
+}
+
+.feedback-template.type-preview_widget.size-md .contacts-page form, .feedback-template.type-preview_widget.size-md .comments-page form {
+  margin-top: 5px;
+}
+
+.feedback-template.type-preview_widget.size-md .contacts-page .service-title-outer, .feedback-template.type-preview_widget.size-md .comments-page .service-title-outer {
+  margin-bottom: 0;
+}
+
+.feedback-template.type-preview_widget.size-md .contacts-page .service-title-outer .services-title, .feedback-template.type-preview_widget.size-md .comments-page .service-title-outer .services-title {
+  font-size: 9.5px;
+}
+
+.feedback-template.type-preview_widget.size-md .contacts-page .submit-button {
+  min-width: 85% !important;
+  padding: 5px !important;
+  font-size: 7px !important;
+}
+
+.feedback-template.type-preview_widget.size-md .form-control {
+  height: 25px;
+  min-height: 25px;
+  line-height: 12px;
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+.feedback-template.type-preview_widget.size-md .form-group {
+  margin-bottom: 0px;
+}
+
+.feedback-template.type-preview_widget.size-md .btn {
+  padding: 3px 7px;
+  font-size: 10px;
+}
+
+.feedback-template.type-preview_widget.size-md .logo {
+  padding: 0.5em;
+  min-height: 0;
+}
+
+.feedback-template.type-preview_widget.size-md .logo img {
+  max-height: 42px;
+  max-width: 95%;
+  padding: 1px;
+  margin: 5px;
+}
+
+.feedback-template.type-preview_widget.size-xs {
+  width: 40px !important;
+  height: 48px !important;
+  font-size: 13% !important;
+  margin: auto;
+  border: 2px solid #ddd;
+}
+
+.feedback-template.type-preview_widget.size-xs > div {
+  border-width: 2px !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .template-header .qmeter-logo {
+  padding: 1px !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .template-header .qmeter-logo img {
+  width: 10px !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .template-header .header-buttons .h-b {
+  padding: 0.15em !important;
+  font-size: 0.2em !important;
+  line-height: 0.2em !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .logo {
+  padding: 0.1em !important;
+  min-height: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .logo img {
+  max-height: 3px !important;
+  max-width: 90% !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .service-title-outer {
+  margin-bottom: 1px !important;
+  padding: 0 !important;
+  height: 5px !important;
+  border-radius: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .service-title-outer .services-title {
+  width: 90% !important;
+  padding: 0 !important;
+  font-size: 2px !important;
+  border-radius: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .services-list {
+  font-size: 100% !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .services-list .service-item {
+  margin-top: 0 !important;
+  min-height: 5px !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .services-list .service-item .service-inner {
+  margin-top: 0 !important;
+}
+
+.feedback-template.type-preview_widget.size-xs .services-list .service-item .service-inner span {
+  font-size: 1em !important;
+  line-height: 1em !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.feedback-template.type-web_widget, .feedback-template.type-marketing_widget {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.feedback-template.type-web_widget .template-header .qmeter-logo, .feedback-template.type-marketing_widget .template-header .qmeter-logo {
+  padding: 0.8vh;
+}
+
+.feedback-template.type-web_widget .template-header .qmeter-logo img, .feedback-template.type-marketing_widget .template-header .qmeter-logo img {
+  max-height: 75%;
+  max-width: 85%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.feedback-template.type-web_widget .template-header .header-buttons .h-b, .feedback-template.type-marketing_widget .template-header .header-buttons .h-b {
+  padding: 0 1.45em;
+  font-size: 2.5vh;
+  line-height: 2.5vh;
+  cursor: pointer;
+}
+
+.feedback-template.type-web_widget .customer-name, .feedback-template.type-marketing_widget .customer-name {
+  font-size: 3.5vh;
+  text-align: center;
+  font-weight: bold;
+}
+
+.feedback-template.type-web_widget .logo img, .feedback-template.type-marketing_widget .logo img {
+  max-height: 85%;
+  max-width: 89%;
+}
+
+.feedback-template .checkbox-container {
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  padding-right: 13px;
+  padding-left: 13px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+}
+
+.feedback-template .checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.feedback-template .checkbox-container .checkmark {
+  position: absolute;
+  border: 1px solid #aaa;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border-radius: 6px;
+  width: 25px;
+  height: 25px;
+}
+
+.feedback-template .checkbox-container:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+.feedback-template .checkbox-container input:checked ~ .checkmark {
+  background-color: #a1c058;
+  border: 1px solid #a1c058;
+}
+
+.feedback-template .checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.feedback-template .checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.feedback-template .checkbox-container .checkmark:after {
+  left: 9px;
+  top: 3px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.feedback-template .service-title-outer {
+  max-height: 22%;
+  margin-bottom: 10px;
+}
+
+.feedback-template .service-title-outer .services-title {
+  min-width: 82%;
+  max-width: 89%;
+  padding: 2vh 1.09vh;
+  font-size: 2.5vh;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.feedback-template .service-title-outer .services-title span {
+  line-height: 3vh;
+}
+
+.feedback-template .comments-page .submit-button {
+  margin-top: 5vh;
+}
+
+.feedback-template .comments-page .comment-textbox {
+  margin-top: 2vh;
+  padding: 2vh;
+}
+
+.feedback-template .contacts-page .form-control,
+.feedback-template .comments-page .form-control {
+  height: 7.7vh;
+  min-height: 32px;
+  font-size: 2.3vh;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  padding-left: 2vw;
+}
+
+.feedback-template .contacts-page form,
+.feedback-template .comments-page form {
+  margin-top: 3vh;
+}
+
+.feedback-template .contacts-page ::placeholder,
+.feedback-template .comments-page ::placeholder {
+  color: #9e9fa3;
+}
+
+.feedback-template .contacts-page .submit-button,
+.feedback-template .comments-page .submit-button {
+  min-width: 25vw;
+  padding: 2vh;
+  font-size: 2.5vh;
+  border-radius: 6px;
+}
+
+.feedback-template .contacts-page .skip-button,
+.feedback-template .comments-page .skip-button {
+  font-size: 2.5vh;
+}
+
+.feedback-template button.btn {
+  padding: 1.2vh 2.5vh;
+  font-size: 1.89vh;
+  text-transform: none;
+}
+
+.feedback-template .thanks-text {
+  margin-top: 15vh;
+  line-height: normal;
+}
+
+.feedback-template .form-control.comment-textbox {
+  height: 26vh;
+}
+
+.feedback-template .services-list.more-than-five .service-item {
+  min-height: 63px;
+}
+
+.feedback-template .services-list .service-item {
+  -ms-flex: 1 0 20%;
+  flex: 1 0 20%;
+  max-width: 100%;
+  min-height: 20%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.feedback-template .services-list .service-item .service-inner {
+  position: relative;
+  z-index: 10;
+  margin-top: 1px;
+}
+
+.feedback-template .services-list .service-item .service-inner span {
+  font-size: 3vh;
+  line-height: 3vh;
+  padding: 0 4.7vw;
+  text-align: center;
+}
+
+.feedback-template .services-list .service-item .service-inner span span {
+  padding-right: 8px;
+}
+
+.feedback-template .services-list .service-item .service-inner .selected-rate {
+  min-width: 21.2vw;
+  cursor: pointer;
+}
+
+.feedback-template .services-list .service-item .service-inner .selected-rate span {
+  margin-top: 7px;
+  font-size: 4vh;
+  line-height: 2.5vh;
+}
+
+.feedback-template .services-list .service-item .service-inner .selected-rate small {
+  font-size: 2vh;
+  line-height: 4vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feedback-template .services-list .service-item .rate-options-outer {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.feedback-template .services-list .service-item .rate-options-outer .rate-option-item {
+  cursor: pointer;
+}
+
+.feedback-template .services-list .service-item .rate-options-outer .rate-option-item:active {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.feedback-template .services-list .service-item .rate-options-outer .rate-option-item .qm-smile {
+  margin-top: 7px;
+  font-size: 4vh;
+  line-height: 2vh;
+}
+
+.feedback-template .services-list .service-item .rate-options-outer .rate-option-item small {
+  font-size: 2vh;
+  line-height: 4.2vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feedback-template .mark-page-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1330;
+  background-color: rgba(0, 0, 0, 0.62);
+}
+
+.feedback-template.size-md .mark-page-content {
+  position: absolute;
+  top: 47px;
+  right: 10px;
+  bottom: 46px;
+  left: 10px;
+}
+
+.feedback-template.size-md .mark-page {
+  margin-top: 30px;
+  width: 77%;
+}
+
+.feedback-template.size-md .mark-page-marks .mark {
+  height: 39px;
+  min-height: 39px;
+}
+
+.feedback-template.size-md .mark-page-marks .mark span {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.feedback-template.size-md .mark-page-rate {
+  width: 100%;
+  height: 58px;
+}
+
+.feedback-template.size-md .mark-page-rate .mn-rate-icon {
+  font-size: 4.7em;
+}
+
+.feedback-template.size-md .mark-page-title {
+  margin: 0 auto 8px;
+  font-size: 1.5em;
+  padding: 0.4em;
+  max-height: 40px;
+}
+
+.feedback-template .single-mode-rate-item .single-mode-rate-smile {
+  width: 37%;
+  text-align: end;
+}
+
+.feedback-template .single-mode-rate-item .single-mode-rate-text {
+  margin-inline-start: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: start;
+  width: 63%;
+}
+
+.feedback-template .single-mode-rate-item.without-labels .single-mode-rate-smile {
+  width: 100%;
+  text-align: center;
+}
+
+.feedback-template.portrait.size-lg.single-service div.single-mode-rate-text > span {
+  font-size: 2.8vh !important;
+}
+
+.feedback-template.portrait.size-lg.single-service .services-title {
+  font-size: 2.3vh !important;
+  padding: 1.5vh 1.09vh !important;
+}
+
+.feedback-template.portrait.size-lg .contacts-page .contact-form {
+  margin-top: 2vh;
+}
+
+.feedback-template.portrait.size-lg .contacts-page .form-control {
+  height: 7vh;
+}
+
+.feedback-template.portrait.size-lg .contacts-page .gender-selection-box {
+  height: 7vh;
+}
+
+.feedback-template.portrait.size-lg .contacts-page .gender-selection-box i {
+  font-size: 4vh !important;
+}
+
+.feedback-template.portrait.size-lg .contacts-page .submit-button {
+  padding: 1.0vh;
+  font-size: 2vh;
+}
+
+.feedback-template.portrait.size-lg .contacts-page .skip-button {
+  font-size: 2vh;
+}
+
+.feedback-template.landscape .mark-page {
+  min-width: 85%;
+}
+
+.feedback-template.landscape .services-list .service-inner .single-mode-rate-item .single-mode-rate-smile {
+  width: auto;
+  text-align: center;
+}
+
+.feedback-template.landscape .services-list .service-inner .single-mode-rate-item .single-mode-rate-text {
+  width: auto;
+  margin-left: 0;
+  text-align: center;
+}
+
+.feedback-template.landscape .top-side {
+  height: 70% !important;
+}
+
+@media only screen and (min-width: 1025px) {
+  .feedback-template.landscape .lang-page .smiley {
+    margin-top: 23.5vh !important;
+    font-size: 13vh !important;
+  }
+  .feedback-template.landscape .lang-page .titles .lang-title.s {
+    font-size: 2.5vh !important;
+  }
+  .feedback-template.landscape .lang-page .titles .lang-title.m {
+    font-size: 3vh !important;
+  }
+  .feedback-template.landscape .lang-page .titles .lang-title.l {
+    font-size: 3.5vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages {
+    margin-top: 9.9vh !important;
+    max-height: 15vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages .lang-name.s {
+    font-size: 1.5vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages .lang-name.m {
+    font-size: 2vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages .lang-name.l {
+    font-size: 2.5vh !important;
+  }
+  .feedback-template.landscape.type-marketing_widget.single-service .services-page .service-title-outer,
+  .feedback-template.landscape.type-marketing_widget.single-service .rates-page .service-title-outer, .feedback-template.landscape.type-web_widget.single-service .services-page .service-title-outer,
+  .feedback-template.landscape.type-web_widget.single-service .rates-page .service-title-outer {
+    margin: 10px 0 20px 0;
+  }
+  .feedback-template.landscape.type-marketing_widget.single-service .services-page .service-title-outer .services-title,
+  .feedback-template.landscape.type-marketing_widget.single-service .rates-page .service-title-outer .services-title, .feedback-template.landscape.type-web_widget.single-service .services-page .service-title-outer .services-title,
+  .feedback-template.landscape.type-web_widget.single-service .rates-page .service-title-outer .services-title {
+    min-width: 50%;
+    padding: 2.2vh 1.09vh;
+    font-size: 3.2vh;
+  }
+  .feedback-template.landscape.type-marketing_widget .services-list .service-inner .single-mode-rate-item, .feedback-template.landscape.type-web_widget .services-list .service-inner .single-mode-rate-item {
+    padding: 0 1.5vw;
+  }
+  .feedback-template.landscape.type-marketing_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-smile span, .feedback-template.landscape.type-web_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-smile span {
+    font-size: 17vh;
+    line-height: 17vh;
+    padding: 0;
+  }
+  .feedback-template.landscape.type-marketing_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text, .feedback-template.landscape.type-web_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text {
+    line-height: 4vh;
+  }
+  .feedback-template.landscape.type-marketing_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text span, .feedback-template.landscape.type-web_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text span {
+    font-size: 4vh;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .feedback-template.landscape .lang-page .smiley {
+    margin-top: 23.5vh !important;
+    font-size: 19vh !important;
+  }
+  .feedback-template.landscape .lang-page .titles .lang-title.s {
+    font-size: 4vh !important;
+  }
+  .feedback-template.landscape .lang-page .titles .lang-title.m {
+    font-size: 5vh !important;
+  }
+  .feedback-template.landscape .lang-page .titles .lang-title.l {
+    font-size: 6vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages {
+    margin-top: 14.9vh !important;
+    max-height: 18vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages .lang-name.s {
+    font-size: 2.5px !important;
+  }
+  .feedback-template.landscape .lang-page .languages .lang-name.m {
+    font-size: 3vh !important;
+  }
+  .feedback-template.landscape .lang-page .languages .lang-name.l {
+    font-size: 3.5vh !important;
+  }
+  .feedback-template.landscape .top-side {
+    height: 63% !important;
+  }
+  .feedback-template.landscape.single-service .services-page .service-title-outer,
+  .feedback-template.landscape.single-service .rates-page .service-title-outer {
+    margin: 10px 0 20px 0;
+  }
+  .feedback-template.landscape.single-service .services-page .service-title-outer .services-title,
+  .feedback-template.landscape.single-service .rates-page .service-title-outer .services-title {
+    min-width: 50%;
+    padding: 2.2vh 1.09vh;
+    font-size: 3.2vh;
+  }
+  .feedback-template.landscape .services-list .service-inner .single-mode-rate-item {
+    padding: 0 1.5vw;
+  }
+  .feedback-template.landscape .services-list .service-inner .single-mode-rate-item .single-mode-rate-smile span {
+    font-size: 17vh;
+    line-height: 17vh;
+    padding: 0;
+  }
+  .feedback-template.landscape .services-list .service-inner .single-mode-rate-item .single-mode-rate-text {
+    line-height: 4vh;
+  }
+  .feedback-template.landscape .services-list .service-inner .single-mode-rate-item .single-mode-rate-text span {
+    font-size: 4vh;
+    padding: 0;
+  }
+  .feedback-template.landscape .contacts-page .service-title-outer {
+    margin: 10px 0 20px 0;
+  }
+  .feedback-template.landscape .contacts-page .service-title-outer .services-title {
+    min-width: 90%;
+    padding: 2.2vh 1.09vh;
+    font-size: 3.2vh;
+  }
+  .feedback-template.landscape .contacts-page .contact-form {
+    margin-top: 0vh;
+  }
+  .feedback-template.landscape .comments-page .service-title-outer {
+    margin: 10px 0 20px 0;
+  }
+  .feedback-template.landscape .comments-page .service-title-outer .services-title {
+    min-width: 90%;
+    padding: 2.2vh 1.09vh;
+    font-size: 2.8vh;
+  }
+  .feedback-template.landscape .terms-label u {
+    text-decoration: none !important;
+  }
+  .feedback-template.landscape .terms-label u i {
+    font-size: 2.1vh;
+    line-height: 2.1vh;
+    margin: 0vh 10px;
+  }
+}
+
+.feedback-template div.lang-page {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.feedback-template div.lang-page .dimmer {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.feedback-template div.lang-page .customer-logo {
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  right: 23px;
+}
+
+.feedback-template div.lang-page .customer-logo img {
+  max-height: 9vh;
+  max-width: 40%;
+  position: relative;
+  z-index: 9;
+}
+
+.feedback-template div.lang-page .left {
+  text-align: left !important;
+}
+
+.feedback-template div.lang-page .center {
+  text-align: center !important;
+}
+
+.feedback-template div.lang-page .right {
+  text-align: right !important;
+}
+
+.feedback-template div.lang-page .content {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.feedback-template div.lang-page .content .smiley {
+  margin-top: 23.5vh;
+  font-size: 20vw;
+}
+
+.feedback-template div.lang-page .content .hide {
+  display: block !important;
+  opacity: 0 !important;
+}
+
+.feedback-template div.lang-page .content .titles {
+  position: relative;
+  margin-top: 5vh;
+}
+
+.feedback-template div.lang-page .content .titles .lang-title {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  margin: auto;
+  transition: visibility 0s, opacity 0.5s linear;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.feedback-template div.lang-page .content .titles .show-title {
+  visibility: visible;
+  opacity: 1;
+}
+
+.feedback-template div.lang-page .content .languages {
+  max-height: 22.3vh;
+  margin-top: 10vh;
+}
+
+.feedback-template div.lang-page .content .languages .lang-item {
+  position: relative;
+}
+
+.feedback-template div.lang-page .content .languages .lang-item .flag {
+  background-size: cover;
+  max-width: 90%;
+  margin: auto;
+}
+
+.feedback-template div.lang-page .content .languages .lang-item .flag img {
+  max-height: 100%;
+  margin-bottom: 2vh !important;
+  max-width: 80%;
+  border-radius: 5px;
+}
+
+.feedback-template div.lang-page .content .languages .lang-item .lang-name {
+  color: #fff;
+}
+
+.feedback-template .mark-page-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.feedback-template .mark-page {
+  background-color: #fff;
+  min-width: 88%;
+  margin: 45px 6% 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.feedback-template .mark-page-rate {
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  position: relative;
+  margin: 0;
+  background-color: white;
+  padding-top: 1em;
+}
+
+.feedback-template .mark-page-rate .mn-rate-icon {
+  font-size: 5em;
+}
+
+.feedback-template .mark-page-rate md-icon {
+  color: #647c8c;
+  font-size: 5.4em;
+  padding-top: 10px;
+}
+
+.feedback-template .mark-page-title {
+  max-width: 90%;
+  padding: 1em 1.7em;
+  margin: 0.4em auto 1em;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #647c8c;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.feedback-template .mark-page-title .md-headline {
+  font-size: 2.5vh;
+  line-height: 2.6vh;
+  max-height: 5vh;
+  overflow: hidden;
+  display: block;
+}
+
+.feedback-template .mark-page-marks {
+  max-height: 48vh;
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.feedback-template .mark-page-marks .mark {
+  margin-bottom: 1px;
+  background-color: transparent;
+  min-height: 12vh;
+  position: relative;
+  z-index: 4;
+  color: #fff;
+  padding: 1px 1px 0px 1px;
+}
+
+.feedback-template .mark-page-marks .mark .mark-bg {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.feedback-template .mark-page-marks .mark span {
+  font-size: 2.5vh;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.feedback-template .gender-selection-box {
+  border: 1px solid #898989;
+  color: #818286;
+  border-radius: 6px;
+  height: 7.5vh;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.feedback-template .gender-selection-box:hover {
+  color: #fff;
+}
+
+.feedback-template .gender-selection-box.active {
+  color: #ffffff;
+}
+
+.feedback-template .gender-selection-box:hover.male, .feedback-template .gender-selection-box.active.male {
+  border-color: #2d90d3;
+  background: #2d90d3;
+  color: #fff;
+}
+
+.feedback-template .gender-selection-box:hover.female, .feedback-template .gender-selection-box.active.female {
+  border-color: #e1597f;
+  background: #e1597f;
+  color: #fff;
+}
+
+.feedback-template .gender-selection-box .gender {
+  cursor: pointer;
+  margin: 0;
+}
+
+.feedback-template .gender-selection-box .gender i {
+  font-size: 5vh;
+  line-height: 1vh;
+  position: relative;
+}
+
+.feedback-template .form-group {
+  margin-bottom: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.feedback-template.size-md .mark-page-marks {
+  max-height: 162px;
+}
+
+.feedback-template.size-md .gender-selection-box {
+  width: 30px;
+  height: 25px;
+}
+
+.feedback-template.size-md .gender-selection-box .gender i {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.feedback-template.tablet {
+  padding: 63px 30px 45px;
+  background-image: url("/images/tablet-ca.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.feedback-template.tablet.size-md {
+  padding: 47px 13px;
+}
+
+.feedback-template.tablet .services-page,
+.feedback-template.tablet .rates-page,
+.feedback-template.tablet .contacts-page,
+.feedback-template.tablet .comments-page {
+  border-width: 0 !important;
+}
+
+.feedback-template *:not(input, textarea, select) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.feedback-template .services-page,
+.feedback-template .rates-page,
+.feedback-template .contacts-page {
+  border-top-width: 4px !important;
+}
+
+.feedback-template .contacts-page .service-title-outer,
+.feedback-template .comments-page .service-title-outer {
+  max-height: 7.4vh;
+  margin-bottom: 0;
+}
+
+.feedback-template .contacts-page .service-title-outer .services-title span,
+.feedback-template .comments-page .service-title-outer .services-title span {
+  line-height: 2.8vh;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .fullheight {
+    height: 768px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .fullheight {
+    height: 1024px;
+  }
+}
+
+/* iphone5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 320px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 568px;
+  }
+}
+
+/* iPhone 4 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 320px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .fullheight {
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .type-marketing_widget.single-service .services-page .service-title-outer,
+  .type-marketing_widget.single-service .rates-page .service-title-outer,
+  .type-web_widget.single-service .services-page .service-title-outer,
+  .type-web_widget.single-service .rates-page .service-title-outer {
+    margin: 10px 0 20px 0;
+  }
+  .type-marketing_widget.single-service .services-page .service-title-outer .services-title,
+  .type-marketing_widget.single-service .rates-page .service-title-outer .services-title,
+  .type-web_widget.single-service .services-page .service-title-outer .services-title,
+  .type-web_widget.single-service .rates-page .service-title-outer .services-title {
+    min-width: 50%;
+    padding: 2.2vh 4.09vh;
+    font-size: 3vh;
+  }
+  .type-marketing_widget .lang-page .titles .lang-title.s,
+  .type-web_widget .lang-page .titles .lang-title.s {
+    font-size: 4vh !important;
+  }
+  .type-marketing_widget .lang-page .titles .lang-title.m,
+  .type-web_widget .lang-page .titles .lang-title.m {
+    font-size: 5vh !important;
+  }
+  .type-marketing_widget .lang-page .titles .lang-title.l,
+  .type-web_widget .lang-page .titles .lang-title.l {
+    font-size: 6vh !important;
+  }
+  .type-marketing_widget .lang-page .languages,
+  .type-web_widget .lang-page .languages {
+    margin-top: 14.9vh !important;
+    max-height: 18vh !important;
+  }
+  .type-marketing_widget .lang-page .languages .lang-name.s,
+  .type-web_widget .lang-page .languages .lang-name.s {
+    font-size: 2.5px !important;
+  }
+  .type-marketing_widget .lang-page .languages .lang-name.m,
+  .type-web_widget .lang-page .languages .lang-name.m {
+    font-size: 3vh !important;
+  }
+  .type-marketing_widget .lang-page .languages .lang-name.l,
+  .type-web_widget .lang-page .languages .lang-name.l {
+    font-size: 3.5vh !important;
+  }
+  .type-marketing_widget .services-list .service-inner .single-mode-rate-item,
+  .type-web_widget .services-list .service-inner .single-mode-rate-item {
+    padding: 0 1.5vw;
+  }
+  .type-marketing_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-smile span,
+  .type-web_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-smile span {
+    font-size: 6vh;
+    line-height: 6vh;
+    padding: 0;
+  }
+  .type-marketing_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text,
+  .type-web_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text {
+    line-height: 3vh;
+  }
+  .type-marketing_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text span,
+  .type-web_widget .services-list .service-inner .single-mode-rate-item .single-mode-rate-text span {
+    font-size: 3vh;
+    padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .feedback-template.type-web_widget .services-title,
+  .feedback-template.type-marketing_widget .services-title {
+    padding: 1vh 1.09vh;
+    max-width: 89%;
+    font-size: 2.5vh;
+    span-line-height: 2.5vh;
+  }
+}
+
+@media (min-width: 1025px) {
+  .template-page-body {
+    background-color: rgba(0, 0, 0, 0.09);
+  }
+  .feedback-template.type-web_widget,
+  .feedback-template.type-marketing_widget {
+    max-width: 60vw;
+    max-height: 90vh;
+    margin-top: 5vh;
+  }
+  .feedback-template.type-web_widget.single-service,
+  .feedback-template.type-marketing_widget.single-service {
+    max-width: 67vw;
+    max-height: 83vh;
+    margin-top: 8.5vh;
+  }
+  .feedback-template.type-web_widget .gender-group > div,
+  .feedback-template.type-marketing_widget .gender-group > div {
+    font-size: 2.1vh;
+  }
+  .feedback-template.type-web_widget .end,
+  .feedback-template.type-marketing_widget .end {
+    overflow-y: auto;
+  }
+  .feedback-template.type-web_widget .submit-button,
+  .feedback-template.type-marketing_widget .submit-button {
+    font-size: 3vh !important;
+    padding: 1vh !important;
+  }
+  .modal-container.size-lg {
+    width: 47vw;
+    position: relative;
+    height: 100vh;
+    margin: auto;
+  }
+  .modal-container.size-lg.single-service {
+    width: 53vw;
+  }
+  .feedback-template .contacts-page .form-control,
+  .feedback-template .comments-page .form-control {
+    height: 5.7vh;
+    min-height: 32px;
+    font-size: 1.8vh;
+  }
+  .feedback-template .form-control.comment-textbox {
+    height: 20vh;
+  }
+  .feedback-template
+.services-list
+.service-item
+.service-inner
+.selected-rate {
+    min-width: 8.5vw;
+  }
+  .feedback-template .services-list .service-item .service-inner span {
+    padding: 0;
+  }
+  .feedback-template .gender-selection-box {
+    height: 5.7vh;
+  }
+  .qmeter-logo {
+    width: 120px !important;
+    max-width: 120px !important;
+  }
+  .feedback-template .template-header .qmeter-logo img {
+    max-height: 92%;
+    max-width: 92%;
+  }
+  .titles .lang-title.s {
+    font-size: 4vh !important;
+  }
+  .titles .lang-title.m {
+    font-size: 5vh !important;
+  }
+  .titles .lang-title.l {
+    font-size: 6vh !important;
+  }
+  .languages {
+    margin-top: 14.9vh !important;
+    max-height: 18vh !important;
+  }
+  .languages .lang-name.s {
+    font-size: 2.5px !important;
+  }
+  .languages .lang-name.m {
+    font-size: 3vh !important;
+  }
+  .languages .lang-name.l {
+    font-size: 3.5vh !important;
+  }
+}
+
+.services-top-container > div > div:last-child {
+  z-index: 999999999999;
+}
+
+.hide-qmeter-logo .qmeter-logo {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
