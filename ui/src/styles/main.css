@@ -1546,3 +1546,13 @@ body {
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.align-item-satrt {
+  align-items: flex-start;
+}

@@ -1595,11 +1595,15 @@ export default class FeedbackTemplateView extends Component {
                         "service-inner flex layout-row",
                         this.createGradientBgColor(service.bgColor)
                       )}
-                      onClick={e => this.handleServiceClick(e, service)}
+                      onClick={e => {
+
+                        this.handleServiceClick(e, service)
+
+                      }}
                     >
                       {this.servicesHasImages() && (
                         <div
-                          className="layout-column layout-align-center-center service-icon flex-10 "
+                          className="layout-column layout-align-center-left service-icon flex-10 "
                           style={{
                             backgroundImage:
                               "url('" + service.iconImgURL + "')",
@@ -1610,10 +1614,14 @@ export default class FeedbackTemplateView extends Component {
                         />
                       )}
                       <span
-                        className="flex layout-column layout-align-center-center"
+                        className="flex layout-column layout-align-center-center align-item-satrt"
                         style={{ color: service.fontColor }}
                       >
-                        {service.name}
+                        <span style={{
+                          textAlign: "left",
+                          padding: "10px 25px"
+                        }}>{service.name}</span>
+
                       </span>
                       {service.selectedRate && (
                         <div
@@ -1639,15 +1647,29 @@ export default class FeedbackTemplateView extends Component {
                         "rate-options-outer layout-column",
                         { hide: !service.isSelected }
                       )}
-                      style={{ zIndex: service.isSelected ? "300" : "5" }}
+                      style={{
+                          zIndex: service.isSelected ? "300" : "5",
+                          width: "auto",
+                          right: "0",
+                          left: "unset",
+                      }}
                     >
+                      {console.log("service.rateBgColor", service.rateBgColor)}
                       <div
                         className="rate-options-list layout-row flex"
-                        style={{ backgroundColor: service.rateBgColor }}
+                        style={{
+                          backgroundColor: service.rateBgColor,
+                          boxShadow: `-10px 0px 18px 6px ${service.rateBgColor}`
+                        }}
                       >
                         {service.isSelected &&
                           this.state.template.ratePage.rateOptions.map(
                             (rate, i) => {
+                              console.log("i", i);
+                              console.log("rate", rate);
+                              console.log("smile-size", this.state.template.ratePage.rateOptions.length);
+                              console.log("smile ", this.state.template.ratePage.rateOptions);
+                              console.log("this.state.template", this.state.template)
                               return Constants.fn.isAvailableRateOption(
                                 i,
                                 this.state.template

@@ -2,7 +2,7 @@
 
 const version = "v1";
 
-const server_1 = "https://api.testqmeter.net";
+const server_1 = "https://api.qmeter.net";
 const server_2 = "https://api.qmeter.net";
 const localAPI = "http://localhost:9000";
 
