@@ -12,7 +12,7 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
 } from "react-modal-bootstrap";
 import { Scrollbars } from "react-custom-scrollbars";
 import classNames from "classnames";
@@ -43,7 +43,7 @@ const feedbackTemplateModel2 = {
     wgtBtnTextUnderlined: false,
     wgtBtnOnHover: false,
     domain: "qmeter.net",
-    company_id: 1
+    company_id: 1,
   },
   template: {
     id: 1,
@@ -55,7 +55,7 @@ const feedbackTemplateModel2 = {
       mode: "singleRate",
       contactInfoPage: true,
       skipContactInfo: true,
-      acceptIncompleteRates: false
+      acceptIncompleteRates: false,
     },
     servicesPage: {
       headerBg: "#ef1f36",
@@ -63,19 +63,19 @@ const feedbackTemplateModel2 = {
       title: {
         text: "Please click on a service to rate.",
         fontColor: "#ffffff",
-        bgColor: "#ef1f36"
+        bgColor: "#ef1f36",
       },
       buttons: {
         next: {
           text: "next",
           fontColor: "#ffffff",
-          bgColor: "#ef1f36"
+          bgColor: "#ef1f36",
         },
         logout: {
           text: "Logout",
           fontColor: "#555555",
-          bgColor: "#ef1f36"
-        }
+          bgColor: "#ef1f36",
+        },
       },
       services: [
         // {
@@ -97,9 +97,9 @@ const feedbackTemplateModel2 = {
           rateBgOpacity: 50,
           rateFontColor: "#ffffff",
           markPageConnections: {
-            onVeryBad: 1
-          }
-        }
+            onVeryBad: 1,
+          },
+        },
         // {
         //     "id": 3,
         //     "name": "Java",
@@ -120,7 +120,7 @@ const feedbackTemplateModel2 = {
         //     "rateFontColor": "#ffffff",
         //     "markPageConnections": {}
         // }
-      ]
+      ],
     },
     ratePage: {
       headerBg: "#ef1f36",
@@ -129,7 +129,7 @@ const feedbackTemplateModel2 = {
       title: {
         text: "How was your experience today ?",
         fontColor: "#ffffff",
-        bgColor: "#ef1f36"
+        bgColor: "#ef1f36",
       },
       rateOption: 5,
       rateOptions: [
@@ -137,33 +137,33 @@ const feedbackTemplateModel2 = {
           label: "Excellent",
           value: 10,
           bgColor: "#ef1f36",
-          fontColor: "#ffffff"
+          fontColor: "#ffffff",
         },
         {
           label: "Good",
           value: 5,
           bgColor: "#cc1a2e",
-          fontColor: "#ffffff"
+          fontColor: "#ffffff",
         },
         {
           label: "Neutral",
           value: 0,
           bgColor: "#a81626",
-          fontColor: "#ffffff"
+          fontColor: "#ffffff",
         },
         {
           label: "Bad",
           value: -5,
           bgColor: "#85111e",
-          fontColor: "#ffffff"
+          fontColor: "#ffffff",
         },
         {
           label: "Unacceptable",
           value: -10,
           bgColor: "#620d16",
-          fontColor: "#ffffff"
-        }
-      ]
+          fontColor: "#ffffff",
+        },
+      ],
     },
     markPages: [
       {
@@ -174,35 +174,35 @@ const feedbackTemplateModel2 = {
         title: {
           text: "Why did you give us Unacceptable rate?",
           fontColor: "#ffffff",
-          bgColor: "#ef1f36"
+          bgColor: "#ef1f36",
         },
         marks: [
           {
             id: 1,
             name: "I dont like you",
             fontColor: "#ffffff",
-            bgColor: "#ef1f36"
+            bgColor: "#ef1f36",
           },
           {
             id: 2,
             name: "It is complicated",
             fontColor: "#ffffff",
-            bgColor: "#c3192c"
+            bgColor: "#c3192c",
           },
           {
             id: 3,
             name: "Just for fun",
             fontColor: "#ffffff",
-            bgColor: "#971422"
+            bgColor: "#971422",
           },
           {
             id: 4,
             name: "Lets dance",
             fontColor: "#ffffff",
-            bgColor: "#6a0e18"
-          }
-        ]
-      }
+            bgColor: "#6a0e18",
+          },
+        ],
+      },
     ],
     contactInfoPage: {
       headerBg: "#ef1f36",
@@ -210,19 +210,19 @@ const feedbackTemplateModel2 = {
       title: {
         text: "Please provide your contact details.",
         fontColor: "#ffffff",
-        bgColor: "#ef1f36"
+        bgColor: "#ef1f36",
       },
       buttons: {
         submit: {
           text: "Submit",
           fontColor: "#ffffff",
-          bgColor: "#ef1f36"
+          bgColor: "#ef1f36",
         },
         skip: {
           text: "Skip",
           fontColor: "#ffffff",
-          bgColor: "#ef1f36"
-        }
+          bgColor: "#ef1f36",
+        },
       },
       contactInfo: [
         {
@@ -230,7 +230,7 @@ const feedbackTemplateModel2 = {
           fieldType: "singleLineText",
           placeHolder: "Full name",
           show: true,
-          required: true
+          required: true,
         },
         {
           fieldName: "phone",
@@ -238,46 +238,46 @@ const feedbackTemplateModel2 = {
           placeHolder: "Phone Number",
           show: true,
           required: true,
-          defaultCountryCode: 971
+          defaultCountryCode: 971,
         },
         {
           fieldName: "email",
           fieldType: "email",
           placeHolder: "E-mail",
           show: true,
-          required: false
+          required: false,
         },
         {
           fieldName: "gender",
           fieldType: "gender",
           placeHolder: "Gender",
           show: false,
-          required: false
+          required: false,
         },
         {
           fieldName: "ageRange",
           fieldType: "age_range",
           placeHolder: "Select your age range",
           show: false,
-          required: false
-        }
+          required: false,
+        },
       ],
       customFieldType1: -1,
-      customFieldType2: -1
+      customFieldType2: -1,
     },
     thankYouPage: {
       headerBg: "#ef1f36",
       bgColor: "#ffffff",
       fontColor: "#ef1f36",
       text: "Thank you for your Feedback !",
-      textSize: "md"
+      textSize: "md",
     },
     company_id: 1,
     created_at: 1487509226482,
     updated_at: 1488903398605,
     drafts:
-      '{"servicesColorsGenerated":true,"servicesMainColor":"#ef1f36","ratesColorsGenerated":true,"globalCustomized":true,"markPage_1_colorsGeneratd":true,"markPage_1_mainColor":"#ef1f36"}'
-  }
+      '{"servicesColorsGenerated":true,"servicesMainColor":"#ef1f36","ratesColorsGenerated":true,"globalCustomized":true,"markPage_1_colorsGeneratd":true,"markPage_1_mainColor":"#ef1f36"}',
+  },
 };
 
 const widgetFeedbackStatusKey = (id, type) => {
@@ -301,7 +301,7 @@ export default class FeedbackTemplateView extends Component {
       languages: this.props.languages,
       selectedLanguage: {
         ltr: true,
-        langID: null
+        langID: null,
       },
       currentPage: this.props.currentPage,
       selectedService: null,
@@ -313,7 +313,7 @@ export default class FeedbackTemplateView extends Component {
         template_id: this.props.template.id,
         rates: [],
         contactInfo: [],
-        comment: ""
+        comment: "",
       },
       showLoader: false,
       showTextModal: false,
@@ -344,20 +344,20 @@ export default class FeedbackTemplateView extends Component {
     marketingAccountID: null,
     targetCustomer: null,
     marketingLink: {},
-    isLandscape: false
+    isLandscape: false,
   };
 
   static contextTypes = {
-    router: PropTypes.object.isRequired
+    router: PropTypes.object.isRequired,
   };
 
-  onOrientationChange = isLandscape => {
+  onOrientationChange = (isLandscape) => {
     this.setState({
-      isLandscape: isLandscape
+      isLandscape: isLandscape,
     });
   };
 
-  getUrlParameter = name => {
+  getUrlParameter = (name) => {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     let regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
     let results = regex.exec(window.location.search);
@@ -366,8 +366,8 @@ export default class FeedbackTemplateView extends Component {
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   };
 
-  getRateOptionByValue = value => {
-    return this.state.template.ratePage.rateOptions.find(rateOption => {
+  getRateOptionByValue = (value) => {
+    return this.state.template.ratePage.rateOptions.find((rateOption) => {
       return rateOption.value == value;
     });
   };
@@ -385,7 +385,7 @@ export default class FeedbackTemplateView extends Component {
     );
   };
 
-  getRateValueByAutoRate = rParameter => {
+  getRateValueByAutoRate = (rParameter) => {
     switch (rParameter) {
       case "ex":
         return 10;
@@ -421,12 +421,12 @@ export default class FeedbackTemplateView extends Component {
 
     window.addEventListener(
       "resize",
-      function() {
+      function () {
         if (window.navigator && /Android/.test(window.navigator.appVersion)) {
           if (
             ["INPUT", "TEXTAREA"].indexOf(document.activeElement.tagName) > -1
           ) {
-            window.setTimeout(function() {
+            window.setTimeout(function () {
               document.activeElement.scrollIntoViewIfNeeded();
             }, 0);
           }
@@ -435,25 +435,25 @@ export default class FeedbackTemplateView extends Component {
       false
     );
 
-    var fixServicesSize = function() {
+    var fixServicesSize = function () {
       var servicesList = $(".more-than-five");
       if (servicesList.length) {
         var slHeight = servicesList.height();
         var slItemH = slHeight / 5;
-        servicesList.find(".service-item").each(function() {
+        servicesList.find(".service-item").each(function () {
           $(this).css({
-            minHeight: slItemH
+            minHeight: slItemH,
           });
         });
       }
     };
 
     if (!(t.props.widgetType == "preview_widget" && t.props.isLandscape)) {
-      $(window).on("resize", function() {
+      $(window).on("resize", function () {
         fixServicesSize();
       });
 
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         fixServicesSize();
       }, 100);
     }
@@ -461,7 +461,7 @@ export default class FeedbackTemplateView extends Component {
     if (t.props.widgetType !== "preview_widget") {
       const mql = window.matchMedia("(orientation: landscape)");
       t.onOrientationChange(mql.matches);
-      mql.addListener(function(mq) {
+      mql.addListener(function (mq) {
         t.onOrientationChange(mq.matches);
         console.log(mq);
       });
@@ -497,14 +497,14 @@ export default class FeedbackTemplateView extends Component {
   }
 
   componentDidUpdate() {
-    console.log("this.state", this.state)
+    console.log("this.state", this.state);
   }
 
-  setLanguage = lang => {
+  setLanguage = (lang) => {
     let translatedTemplate = this.props.translatedTemplates[lang.langID];
     this.setState({
       template: translatedTemplate,
-      selectedLanguage: lang
+      selectedLanguage: lang,
     });
     if (!this.isSingleService()) {
       this.goToPage("services");
@@ -515,7 +515,7 @@ export default class FeedbackTemplateView extends Component {
 
       this.setState({
         template: translatedTemplate,
-        selectedService: translatedTemplate.servicesPage.services[0]
+        selectedService: translatedTemplate.servicesPage.services[0],
       });
     }
   };
@@ -548,7 +548,7 @@ export default class FeedbackTemplateView extends Component {
       if (t.props.widgetType != "preview_widget") {
         t.setState({
           languages: currentLangs,
-          currentShowingTitleIndex: nextTitleIndex
+          currentShowingTitleIndex: nextTitleIndex,
         });
       }
     }
@@ -558,8 +558,6 @@ export default class FeedbackTemplateView extends Component {
     $(window).off("resize");
   }
 
-
-
   resetInteractionTimeout = () => {
     let t = this;
     t.interactionTimeout = 0;
@@ -568,7 +566,7 @@ export default class FeedbackTemplateView extends Component {
   checkInteractionTimeout = () => {
     let t = this;
 
-    $(document).on("change", "select, input, textarea", function() {
+    $(document).on("change", "select, input, textarea", function () {
       t.resetInteractionTimeout();
     });
 
@@ -586,10 +584,10 @@ export default class FeedbackTemplateView extends Component {
       window.location.reload();
     }
 
-    if(t.state.currentPage == "thanks" && !t.checkAutoRate()) {
-      if(t.props.autoClose){
+    if (t.state.currentPage == "thanks" && !t.checkAutoRate()) {
+      if (t.props.autoClose) {
         setTimeout(() => {
-          window.location.href = '/closekiosk';
+          window.location.href = "/closekiosk";
         }, 1000);
       } else {
         window.location.reload();
@@ -601,8 +599,8 @@ export default class FeedbackTemplateView extends Component {
       t.interactionTimeout > 6 &&
       !t.checkAutoRate()
     ) {
-      if(t.props.autoClose){
-        window.location.href = '/closekiosk';
+      if (t.props.autoClose) {
+        window.location.href = "/closekiosk";
       } else {
         window.location.reload();
       }
@@ -611,7 +609,7 @@ export default class FeedbackTemplateView extends Component {
     console.log(t.interactionTimeout);
   };
 
-  _setPage = page => {
+  _setPage = (page) => {
     let t = this;
 
     const subdomainName = window.location.hostname.split(".")[0];
@@ -620,16 +618,19 @@ export default class FeedbackTemplateView extends Component {
 
     this.setState(
       {
-        currentPage: page
+        currentPage: page,
       },
       () => {
         t.resetInteractionTimeout();
 
-        if (page == "contacts") {
+        if (page == "comments") {
+          console.log(
+            "+++++++++++++++ comment page opened and contact form initialized"
+          );
           this.initContactFormValidation();
 
           var contactFormData = $(t.refs.contactForm).serializeArray();
-          contactFormData.forEach(function(_) {
+          contactFormData.forEach(function (_) {
             if (t.props.targetCustomer) {
               if (_.name == "fullName") {
                 $("[name='" + _.name + "']").val(t.props.targetCustomer.name);
@@ -652,14 +653,10 @@ export default class FeedbackTemplateView extends Component {
                     ? "Femaile"
                     : "";
                 if (gender == "Male") {
-                  $(".gender-selection-box")
-                    .first()
-                    .addClass("active");
+                  $(".gender-selection-box").first().addClass("active");
                 }
                 if (gender == "Female") {
-                  $(".gender-selection-box")
-                    .eq(1)
-                    .addClass("active");
+                  $(".gender-selection-box").eq(1).addClass("active");
                 }
                 $("[name='" + _.name + "']").val(gender);
               }
@@ -681,7 +678,6 @@ export default class FeedbackTemplateView extends Component {
               }
             }
           });
-        } else if (page == "comments") {
           t.initCommentFormValidation();
         }
       }
@@ -691,7 +687,7 @@ export default class FeedbackTemplateView extends Component {
   checkingCommentPageEnabledByRate = (rates, ratesEnabled) => {
     let list = [];
 
-    rates.forEach(rate => {
+    rates.forEach((rate) => {
       if (!list.includes(rate.rate)) {
         list.push(rate.rate);
       }
@@ -706,19 +702,22 @@ export default class FeedbackTemplateView extends Component {
     );
   };
 
-  goToPage = page => {
+  goToPage = (page) => {
     let t = this;
 
     if (t.props.widgetType == "preview_widget") {
       return false;
     }
 
-    if (t.state.currentPage == "contacts") {
+    if (
+      t.state.currentPage == "contacts" ||
+      t.state.currentPage == "comments"
+    ) {
       let formData = $(t.refs.contactForm).serializeArray();
-      t.state.contactFormData = formData.map(_ => {
+      t.state.contactFormData = formData.map((_) => {
         return {
           fieldName: _.name,
-          fieldValue: _.value
+          fieldValue: _.value,
         };
       });
     }
@@ -745,7 +744,7 @@ export default class FeedbackTemplateView extends Component {
     if (page == "thanks") {
       this.setState(
         {
-          showLoader: true
+          showLoader: true,
         },
         () => {
           let feedbackStatus =
@@ -763,24 +762,26 @@ export default class FeedbackTemplateView extends Component {
             console.log("thanks1 not send feedback");
             this._setPage(page);
             this.setState({
-              showLoader: false
+              showLoader: false,
             });
           } else {
             console.log("thanks2 send feedback");
             this.sendFeeback()
-              .then(response => {
+              .then((response) => {
                 console.log(response);
-                
+
                 // Dubai Ladies Club redirect to Instructors
                 let serviceExistToRedirect = false;
                 let givenResponse = { ...this.state.response };
 
-                givenResponse.rates.forEach(rate => {
-                  if(rate.service_id == 3907){ serviceExistToRedirect = true }
-                })
+                givenResponse.rates.forEach((rate) => {
+                  if (rate.service_id == 3907) {
+                    serviceExistToRedirect = true;
+                  }
+                });
 
-                  console.log("shoud i redirect: ", serviceExistToRedirect);
-                if(serviceExistToRedirect){
+                console.log("shoud i redirect: ", serviceExistToRedirect);
+                if (serviceExistToRedirect) {
                   let instructorsTemplate = "https://w.qmeter.net/eOG7VO";
                   window.location.href = instructorsTemplate;
                   return true;
@@ -789,11 +790,11 @@ export default class FeedbackTemplateView extends Component {
 
                 this.setState(
                   {
-                    showLoader: false
+                    showLoader: false,
                   },
                   () => {
                     this._setPage(page);
-                    window.setTimeout(function() {
+                    window.setTimeout(function () {
                       t.closeParentWindowIframe();
                     }, 4000);
 
@@ -813,11 +814,11 @@ export default class FeedbackTemplateView extends Component {
                   }
                 );
               })
-              .catch(errorResponse => {
+              .catch((errorResponse) => {
                 console.log("feedback sent error");
                 console.log("error", errorResponse);
                 this.setState({
-                  showLoader: false
+                  showLoader: false,
                 });
               });
           }
@@ -883,6 +884,8 @@ export default class FeedbackTemplateView extends Component {
 
   sendFeeback = () => {
     let response = { ...this.state.response };
+    console.log("++++++++++ here is the final response");
+    console.log(response);
 
     if (
       this.state.selectedLanguage != null &&
@@ -893,7 +896,7 @@ export default class FeedbackTemplateView extends Component {
 
     if (!this.state.isContactFormSkipped) {
       response.contactInfo = this.state.contactFormData.filter(
-        _ => _.fieldName != "terms_and_conditions"
+        (_) => _.fieldName != "terms_and_conditions"
       );
       response.contactInfo.map((_, i, a) => {
         if (_.fieldName == "phone") {
@@ -902,7 +905,7 @@ export default class FeedbackTemplateView extends Component {
             _.fieldValue ==
               "+" +
                 this.state.template.contactInfoPage.contactInfo.find(
-                  _ => _.fieldName == "phone"
+                  (_) => _.fieldName == "phone"
                 ).defaultCountryCode
           ) {
             a.splice(i, 1);
@@ -933,7 +936,7 @@ export default class FeedbackTemplateView extends Component {
     return new Promise((resolve, reject) => reject());
   };
 
-  getTextSizeByValue = value => {
+  getTextSizeByValue = (value) => {
     let textSize = "7vh";
     if (value == "lg") {
       textSize = "11vh";
@@ -945,7 +948,7 @@ export default class FeedbackTemplateView extends Component {
     return textSize;
   };
 
-  getRateIconClass = rate => {
+  getRateIconClass = (rate) => {
     let rateIconClass = "qs-icon-s1";
     if (rate.value == 5) {
       rateIconClass = "qs-icon-s2";
@@ -989,7 +992,7 @@ export default class FeedbackTemplateView extends Component {
     return newColor;
   };
 
-  appendStyleToHead = css => {
+  appendStyleToHead = (css) => {
     var head = document.head || document.getElementsByTagName("head")[0],
       style = document.createElement("style");
 
@@ -1073,7 +1076,7 @@ export default class FeedbackTemplateView extends Component {
 
       this.setState((prevState, props) => ({
         selectedService: null,
-        template: template
+        template: template,
       }));
     }
   };
@@ -1103,7 +1106,7 @@ export default class FeedbackTemplateView extends Component {
 
       this.setState({
         template,
-        selectedService: service
+        selectedService: service,
       });
     } else if (this.isMultiRate()) {
       template.servicesPage.services.forEach((_, i, a) => {
@@ -1112,7 +1115,7 @@ export default class FeedbackTemplateView extends Component {
 
       this.setState({
         selectedService: service,
-        template: template
+        template: template,
       });
     }
 
@@ -1147,7 +1150,7 @@ export default class FeedbackTemplateView extends Component {
 
     response.rates.push({
       service_id: service.id,
-      rate: rate.value
+      rate: rate.value,
     });
 
     console.log("selected rate", response.rates);
@@ -1155,15 +1158,18 @@ export default class FeedbackTemplateView extends Component {
     let nextState = {
       template: template,
       response: response,
-      selectedRate: rate
+      selectedRate: rate,
     };
 
     let rateValueByText = Constants.fn.getRateMarkPageValueByText(rate);
     let markPage = template.markPages.filter(
-      _ => _.id == service.markPageConnections[rateValueByText]
+      (_) => _.id == service.markPageConnections[rateValueByText]
     )[0];
 
-    if (t.checkAutoRate() && (rate.value > 0 || !template.options.contactInfoPage)) {
+    if (
+      t.checkAutoRate() &&
+      (rate.value > 0 || !template.options.contactInfoPage)
+    ) {
       this.goToPage("thanks");
     } else {
       if (t.props.widgetType != "preview_widget") {
@@ -1194,7 +1200,7 @@ export default class FeedbackTemplateView extends Component {
     t.scrollToNextServiceIfCurrentIsLastVisible(selectedServiceIndex);
   };
 
-  scrollToNextServiceIfCurrentIsLastVisible = serviceIndex => {
+  scrollToNextServiceIfCurrentIsLastVisible = (serviceIndex) => {
     var servicesList = $(".services-list");
     var servicesListItems = servicesList.find(".service-item");
     var serviceItem = servicesListItems.eq(serviceIndex);
@@ -1203,7 +1209,7 @@ export default class FeedbackTemplateView extends Component {
     var scrollContent = servicesList;
 
     const visibleElements = [];
-    servicesListItems.each(function() {
+    servicesListItems.each(function () {
       var $this = $(this);
 
       const outerHeight = $this.outerHeight();
@@ -1224,7 +1230,7 @@ export default class FeedbackTemplateView extends Component {
     ) {
       $(scrollContent.parent()).animate(
         {
-          scrollTop: `+=${serviceItemHeight}px`
+          scrollTop: `+=${serviceItemHeight}px`,
         },
         450
       );
@@ -1246,7 +1252,7 @@ export default class FeedbackTemplateView extends Component {
     if (t.props.outsideClickMarkPageClose) {
       this.setState(
         {
-          selectedMarkPage: null
+          selectedMarkPage: null,
         },
         () => {
           if (this.isSingleRate()) {
@@ -1279,7 +1285,7 @@ export default class FeedbackTemplateView extends Component {
         response: response,
         selectedService: null,
         selectedRate: null,
-        selectedMarkPage: null
+        selectedMarkPage: null,
       },
       () => {
         if (this.isSingleRate()) {
@@ -1328,7 +1334,7 @@ export default class FeedbackTemplateView extends Component {
             " mark layout-column layout-align-center-center",
             this.createGradientBgColor(item.bgColor)
           )}
-          onClick={e => this.handleMarkClick(e, item)}
+          onClick={(e) => this.handleMarkClick(e, item)}
           style={{ display: "table", width: "100%", textAlign: "center" }}
         >
           <div style={{ display: "table-cell", verticalAlign: "middle" }}>
@@ -1345,7 +1351,7 @@ export default class FeedbackTemplateView extends Component {
           className={classNames(
             itemFlex + " mark layout-column layout-align-center-center"
           )}
-          onClick={e => this.handleMarkClick(e, item)}
+          onClick={(e) => this.handleMarkClick(e, item)}
           style={{ order: order }}
         >
           <div
@@ -1469,7 +1475,7 @@ export default class FeedbackTemplateView extends Component {
 
   servicesHasImages = () => {
     var hasImage = false;
-    this.state.template.servicesPage.services.forEach(service => {
+    this.state.template.servicesPage.services.forEach((service) => {
       if (service.iconImgURL && service.iconImgURL != "") {
         hasImage = true;
       }
@@ -1483,7 +1489,7 @@ export default class FeedbackTemplateView extends Component {
         className="services-page layout-column layout-fill flex"
         style={{
           backgroundColor: this.state.template.servicesPage.bgColor,
-          border: "4px solid " + this.state.template.servicesPage.bgColor
+          border: "4px solid " + this.state.template.servicesPage.bgColor,
         }}
       >
         <div className="layout-column" style={{ height: "40%" }}>
@@ -1491,7 +1497,7 @@ export default class FeedbackTemplateView extends Component {
             data-section="header"
             style={{
               backgroundColor: this.state.template.servicesPage.headerBg,
-              height: "17%"
+              height: "17%",
             }}
             className="template-header layout-row"
           >
@@ -1515,14 +1521,14 @@ export default class FeedbackTemplateView extends Component {
                   className="h-b next-button flex layout-column layout-align-center-center"
                   style={{
                     backgroundColor: this.state.template.servicesPage.buttons
-                      .next.bgColor
+                      .next.bgColor,
                   }}
                   onClick={this.handleNextButtonClick}
                 >
                   <span
                     style={{
                       color: this.state.template.servicesPage.buttons.next
-                        .fontColor
+                        .fontColor,
                     }}
                   >
                     {this.state.template.servicesPage.buttons.next.text}
@@ -1550,7 +1556,7 @@ export default class FeedbackTemplateView extends Component {
             <div
               style={{
                 height: "15%",
-                color: this.state.template.servicesPage.title.bgColor
+                color: this.state.template.servicesPage.title.bgColor,
               }}
               className="customer-name"
             >
@@ -1563,12 +1569,12 @@ export default class FeedbackTemplateView extends Component {
             <div
               className="services-title layout-column text-center"
               style={{
-                backgroundColor: this.state.template.servicesPage.title.bgColor
+                backgroundColor: this.state.template.servicesPage.title.bgColor,
               }}
             >
               <span
                 style={{
-                  color: this.state.template.servicesPage.title.fontColor
+                  color: this.state.template.servicesPage.title.fontColor,
                 }}
               >
                 {this.state.template.servicesPage.title.text}
@@ -1600,10 +1606,8 @@ export default class FeedbackTemplateView extends Component {
                         "service-inner flex layout-row",
                         this.createGradientBgColor(service.bgColor)
                       )}
-                      onClick={e => {
-
-                        this.handleServiceClick(e, service)
-
+                      onClick={(e) => {
+                        this.handleServiceClick(e, service);
                       }}
                     >
                       {this.servicesHasImages() && (
@@ -1614,7 +1618,7 @@ export default class FeedbackTemplateView extends Component {
                               "url('" + service.iconImgURL + "')",
                             backgroundSize: "contain",
                             backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center"
+                            backgroundPosition: "center",
                           }}
                         />
                       )}
@@ -1622,11 +1626,14 @@ export default class FeedbackTemplateView extends Component {
                         className="flex layout-column layout-align-center-center align-item-satrt"
                         style={{ color: service.fontColor }}
                       >
-                        <span style={{
-                          textAlign: "left",
-                          padding: "10px 25px"
-                        }}>{service.name}</span>
-
+                        <span
+                          style={{
+                            textAlign: "left",
+                            padding: "10px 25px",
+                          }}
+                        >
+                          {service.name}
+                        </span>
                       </span>
                       {service.selectedRate && (
                         <div
@@ -1653,16 +1660,20 @@ export default class FeedbackTemplateView extends Component {
                         { hide: !service.isSelected }
                       )}
                       style={{
-                          zIndex: service.isSelected ? "300" : "5",
-                          right: "0",
-                        alignItems: "flex-end"
+                        zIndex: service.isSelected ? "300" : "5",
+                        right: "0",
+                        alignItems: "flex-end",
                       }}
                     >
                       <div
-                        className={`rate-options-list rate-options-list-${service.id === 4823 ? this.state.template.ratePage.rateOption : 2} layout-row flex`}
+                        className={`rate-options-list rate-options-list-${
+                          service.id === 4823
+                            ? this.state.template.ratePage.rateOption
+                            : 2
+                        } layout-row flex`}
                         style={{
                           backgroundColor: service.rateBgColor,
-                          display: "flex"
+                          display: "flex",
                         }}
                       >
                         {service.isSelected &&
@@ -1670,14 +1681,21 @@ export default class FeedbackTemplateView extends Component {
                             (rate, i) => {
                               console.log("service", service);
 
-                              return (Constants.fn.isAvailableRateOption(
+                              return Constants.fn.isAvailableRateOption(
                                 i,
                                 this.state.template
-                              ) &&  ((service.id === 4823) || (service.id !== 4823 &&  i === 0 ) || (service.id !== 4823 &&  i === this.state.template.ratePage.rateOptions.length - 1))   )? (
+                              ) &&
+                                (service.id === 4823 ||
+                                  (service.id !== 4823 && i === 0) ||
+                                  (service.id !== 4823 &&
+                                    i ===
+                                      this.state.template.ratePage.rateOptions
+                                        .length -
+                                        1)) ? (
                                 <div
                                   key={i}
                                   className={`rate-option-item rate-option-item-${this.state.template.ratePage.rateOption} flex layout-column layout-align-center-center`}
-                                  onClick={e =>
+                                  onClick={(e) =>
                                     this.handleRateClick(e, service, rate)
                                   }
                                 >
@@ -1692,7 +1710,15 @@ export default class FeedbackTemplateView extends Component {
                                     <small
                                       style={{ color: service.rateFontColor }}
                                     >
-                                      {service.id !== 4823 &&  i === 0  ? "Yes" : service.id !== 4823 &&  i === this.state.template.ratePage.rateOptions.length - 1 ? "No" : rate.label}
+                                      {service.id !== 4823 && i === 0
+                                        ? "Yes"
+                                        : service.id !== 4823 &&
+                                          i ===
+                                            this.state.template.ratePage
+                                              .rateOptions.length -
+                                              1
+                                        ? "No"
+                                        : rate.label}
                                     </small>
                                   )}
                                 </div>
@@ -1714,12 +1740,12 @@ export default class FeedbackTemplateView extends Component {
   renderSingleModeRatesPage = () => {
     const pageStyle = {
       backgroundColor: this.state.template.ratePage.bgColor,
-      border: "4px solid " + this.state.template.ratePage.bgColor
+      border: "4px solid " + this.state.template.ratePage.bgColor,
     };
 
     const headerStyle = {
       backgroundColor: this.state.template.ratePage.headerBg,
-      height: "14%"
+      height: "14%",
     };
 
     return (
@@ -1774,7 +1800,7 @@ export default class FeedbackTemplateView extends Component {
             <div
               className="services-title layout-column text-center"
               style={{
-                backgroundColor: this.state.template.ratePage.title.bgColor
+                backgroundColor: this.state.template.ratePage.title.bgColor,
               }}
             >
               <div
@@ -1795,7 +1821,7 @@ export default class FeedbackTemplateView extends Component {
           <div
             className={classNames("flex services-list", {
               "layout-column": !this.state.isLandscape || !this.isSingleRate(),
-              "layout-row": this.state.isLandscape && this.isSingleRate()
+              "layout-row": this.state.isLandscape && this.isSingleRate(),
             })}
           >
             {this.state.template.ratePage.rateOptions.map((item, i) => {
@@ -1812,7 +1838,7 @@ export default class FeedbackTemplateView extends Component {
                       "service-inner flex layout-row",
                       this.createGradientBgColor(item.bgColor)
                     )}
-                    onClick={e =>
+                    onClick={(e) =>
                       this.handleRateClick(e, this.state.selectedService, item)
                     }
                   >
@@ -1823,7 +1849,7 @@ export default class FeedbackTemplateView extends Component {
                         "layout-row layout-align-start-center":
                           !this.state.isLandscape || !this.isSingleRate(),
                         "layout-column layout-align-center-center":
-                          this.state.isLandscape && this.isSingleRate()
+                          this.state.isLandscape && this.isSingleRate(),
                       })}
                       style={{ color: item.fontColor }}
                     >
@@ -1854,20 +1880,20 @@ export default class FeedbackTemplateView extends Component {
       trigger: "change",
       successClass: "has-success",
       errorClass: "has-error",
-      classHandler: function(el) {
+      classHandler: function (el) {
         return el.$element.closest(".form-group");
       },
-      errorsContainer: function(el) {
+      errorsContainer: function (el) {
         return el.$element.closest(".form-group");
       },
       errorsWrapper: '<span class="help-block help-block-min filled"></span>',
-      errorTemplate: "<div></div>"
+      errorTemplate: "<div></div>",
     });
 
     $(this.refs.genderInput).parsley({
       messages: {
-        required: "bunu men mirta elave eledim"
-      }
+        required: "bunu men mirta elave eledim",
+      },
     });
 
     window.Parsley.addMessage(
@@ -1882,11 +1908,11 @@ export default class FeedbackTemplateView extends Component {
       trigger: "change",
       successClass: "has-success",
       errorClass: "has-error",
-      classHandler: function(el) {
+      classHandler: function (el) {
         return el.$element.closest(".form-group");
       },
       errorsWrapper: '<span class="help-block help-block-min filled"></span>',
-      errorTemplate: "<div></div>"
+      errorTemplate: "<div></div>",
     });
   };
 
@@ -1897,6 +1923,48 @@ export default class FeedbackTemplateView extends Component {
     let errors = t.state.template.formErrors;
 
     switch (field.fieldType) {
+      case "select": {
+        if (field.placeHolder === "Call back request") {
+          return (
+            <div
+              className="flex-50 form-group"
+              key={i}
+              style={{ padding: "5px", order: 0 }}
+            >
+              here will be radio button
+            </div>
+          );
+        } else {
+          return (
+            <div
+              className="flex-50 form-group"
+              key={i}
+              style={{ padding: "5px", order: 6 }}
+            >
+              <select
+                className="form-control"
+                // value={this.state.smsListStatusFilter}
+                required={field.required}
+                name={field.fieldName}
+                placeholder={field.placeHolder}
+                tabIndex={tabIndex}
+                data-parsley-required-message={errors.required}
+              >
+                <option value="" disabled selected>
+                  {field.placeHolder}
+                </option>
+                {field.options.map((option, index) => {
+                  return (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+          );
+        }
+      }
       case "singleLineText": {
         if (field.fieldName == "fullName") {
           return (
@@ -2065,15 +2133,13 @@ export default class FeedbackTemplateView extends Component {
             <div className="layout-align-start-center layout-row gender-group">
               <div
                 className="gender-selection-box male selected layout-row flex"
-                onClick={e => {
+                onClick={(e) => {
                   $(e.currentTarget)
                     .addClass("active")
                     .siblings()
                     .removeClass("active");
                   this.refs.genderInput.value = "Male";
-                  $(this.refs.genderInput)
-                    .parsley()
-                    .validate();
+                  $(this.refs.genderInput).parsley().validate();
                 }}
               >
                 <label
@@ -2086,15 +2152,13 @@ export default class FeedbackTemplateView extends Component {
               <div style={{ width: "10px" }} />
               <div
                 className="gender-selection-box female layout-row flex"
-                onClick={e => {
+                onClick={(e) => {
                   $(e.currentTarget)
                     .addClass("active")
                     .siblings()
                     .removeClass("active");
                   this.refs.genderInput.value = "Female";
-                  $(this.refs.genderInput)
-                    .parsley()
-                    .validate();
+                  $(this.refs.genderInput).parsley().validate();
                 }}
               >
                 <label
@@ -2138,36 +2202,6 @@ export default class FeedbackTemplateView extends Component {
           </div>
         );
       }
-      case "select": {
-        return (
-          <div
-            className="flex-50 form-group"
-            key={i}
-            style={{ padding: "5px", order: 6 }}
-          >
-            <select
-              className="form-control"
-              value={this.state.smsListStatusFilter}
-              required={field.required}
-              name={field.fieldName}
-              placeholder={field.placeHolder}
-              tabIndex={tabIndex}
-              data-parsley-required-message={errors.required}
-            >
-              <option value="" disabled selected>
-                {field.placeHolder}
-              </option>
-              {field.options.map((option, index) => {
-                return (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-        );
-      }
       case "number": {
         return (
           <div
@@ -2198,7 +2232,7 @@ export default class FeedbackTemplateView extends Component {
   handleSkipButtonClick = () => {
     this.setState(
       {
-        isContactFormSkipped: true
+        isContactFormSkipped: true,
       },
       () => {
         this.goToPage("comments");
@@ -2206,29 +2240,24 @@ export default class FeedbackTemplateView extends Component {
     );
   };
 
-  handleContactFormSubmit = e => {
+  handleContactFormSubmit = (e) => {
     e.preventDefault();
 
     if (this.props.widgetType == "preview_widget") {
       return false;
     }
 
-    if (
-      $(this.refs.contactForm)
-        .parsley()
-        .validate()
-    ) {
+    if ($(this.refs.contactForm).parsley().validate()) {
       this.goToPage("comments");
     }
   };
 
-  handleCommentFormSubmit = e => {
+  handleCommentFormSubmit = (e) => {
     e.preventDefault();
 
     if (
-      $(this.refs.commentForm)
-        .parsley()
-        .validate()
+      $(this.refs.commentForm).parsley().validate() &&
+      $(this.refs.contactForm).parsley().validate()
     ) {
       this.goToPage("thanks");
     }
@@ -2243,7 +2272,7 @@ export default class FeedbackTemplateView extends Component {
 
     t.setState({
       currentMarkup: this.state.template.contactInfoPage.terms.markupObj,
-      showTextModal: t.props.widgetType != "preview_widget"
+      showTextModal: t.props.widgetType != "preview_widget",
     });
   };
 
@@ -2251,11 +2280,11 @@ export default class FeedbackTemplateView extends Component {
     let t = this;
 
     t.setState({
-      showTextModal: false
+      showTextModal: false,
     });
   };
 
-  renderTextModal = markup => {
+  renderTextModal = (markup) => {
     let t = this;
 
     const html = t.state.currentMarkup
@@ -2306,7 +2335,7 @@ export default class FeedbackTemplateView extends Component {
         className="contacts-page layout-column layout-fill flex"
         style={{
           backgroundColor: this.state.template.contactInfoPage.bgColor,
-          border: "4px solid " + this.state.template.contactInfoPage.bgColor
+          border: "4px solid " + this.state.template.contactInfoPage.bgColor,
         }}
       >
         {this.renderTextModal()}
@@ -2319,7 +2348,7 @@ export default class FeedbackTemplateView extends Component {
             data-section="header"
             style={{
               backgroundColor: this.state.template.contactInfoPage.headerBg,
-              height: "17%"
+              height: "17%",
             }}
             className="template-header layout-row"
           >
@@ -2359,12 +2388,12 @@ export default class FeedbackTemplateView extends Component {
               className="flex-90 services-title layout-column text-center"
               style={{
                 backgroundColor: this.state.template.contactInfoPage.title
-                  .bgColor
+                  .bgColor,
               }}
             >
               <div
                 style={{
-                  color: this.state.template.contactInfoPage.title.fontColor
+                  color: this.state.template.contactInfoPage.title.fontColor,
                 }}
               >
                 {this.state.template.contactInfoPage.title.text}
@@ -2379,13 +2408,13 @@ export default class FeedbackTemplateView extends Component {
           className="end layout-column"
           style={{
             height: this.state.isLandscape ? "60%" : "70%",
-            overflowY: "auto"
+            overflowY: "auto",
           }}
         >
           <form
             ref="contactForm"
             className="contact-form "
-            onSubmit={e => this.handleContactFormSubmit(e)}
+            onSubmit={(e) => this.handleContactFormSubmit(e)}
           >
             <fieldset>
               <div className="layout-row layout-align-center-center">
@@ -2394,11 +2423,11 @@ export default class FeedbackTemplateView extends Component {
                   style={{
                     display: "flex",
                     flexFlow: "row wrap",
-                    justifyContent: "flex-start"
+                    justifyContent: "flex-start",
                   }}
                 >
                   {this.state.template.contactInfoPage.contactInfo
-                    .filter(_ => !!_.show)
+                    .filter((_) => !!_.show)
                     .map((c, i) => {
                       return this.renderContactInfoField(c, i);
                     })}
@@ -2438,7 +2467,7 @@ export default class FeedbackTemplateView extends Component {
                             <u
                               style={{
                                 color: this.state.template.contactInfoPage.terms
-                                  .labelColor
+                                  .labelColor,
                               }}
                             >
                               <i>
@@ -2466,16 +2495,16 @@ export default class FeedbackTemplateView extends Component {
                       color: this.state.template.contactInfoPage.buttons.submit
                         .fontColor,
                       backgroundColor: this.state.template.contactInfoPage
-                        .buttons.submit.bgColor
+                        .buttons.submit.bgColor,
                     }}
-                    onMouseEnter={e => {
+                    onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = this.shadeColor(
                         this.state.template.contactInfoPage.buttons.submit
                           .bgColor,
                         43
                       );
                     }}
-                    onMouseLeave={e => {
+                    onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = this.state.template.contactInfoPage.buttons.submit.bgColor;
                     }}
                   >
@@ -2495,7 +2524,7 @@ export default class FeedbackTemplateView extends Component {
                         color: this.state.template.contactInfoPage.buttons.skip
                           .fontColor,
                         backgroundColor: this.state.template.contactInfoPage
-                          .buttons.skip.bgColor
+                          .buttons.skip.bgColor,
                       }}
                     >
                       {this.state.template.contactInfoPage.buttons.skip.text}
@@ -2509,9 +2538,9 @@ export default class FeedbackTemplateView extends Component {
       </div>
     );
   };
-/**
- * Comment page
- * */
+  /**
+   * Comment page
+   * */
   renderCommentsPage = () => {
     // const check =  this.checkingCommentPageEnabledByRate(this.state.response.rates, this.state.template.additionalCommentPage.ratesEnabled)
     //
@@ -2526,7 +2555,7 @@ export default class FeedbackTemplateView extends Component {
         style={{
           backgroundColor: this.state.template.additionalCommentPage.bgColor,
           border:
-            "4px solid " + this.state.template.additionalCommentPage.bgColor
+            "4px solid " + this.state.template.additionalCommentPage.bgColor,
         }}
       >
         <div className="layout-column start" style={{ height: "40%" }}>
@@ -2535,7 +2564,7 @@ export default class FeedbackTemplateView extends Component {
             style={{
               backgroundColor: this.state.template.additionalCommentPage
                 .headerBg,
-              height: "18%"
+              height: "18%",
             }}
             className="template-header layout-row"
           >
@@ -2575,13 +2604,13 @@ export default class FeedbackTemplateView extends Component {
               className="flex-90 services-title layout-column text-center flex-90"
               style={{
                 backgroundColor: this.state.template.additionalCommentPage.title
-                  .bgColor
+                  .bgColor,
               }}
             >
               <span
                 style={{
                   color: this.state.template.additionalCommentPage.title
-                    .fontColor
+                    .fontColor,
                 }}
               >
                 {this.state.template.additionalCommentPage.title.text}
@@ -2597,8 +2626,104 @@ export default class FeedbackTemplateView extends Component {
           style={{ height: "60%" }}
         >
           <form
+            ref="contactForm"
+            className="contact-form "
+            onSubmit={(e) => this.handleContactFormSubmit(e)}
+          >
+            <fieldset>
+              <div className="layout-row layout-align-center-center">
+                <div
+                  className="flex-90"
+                  style={{
+                    display: "flex",
+                    flexFlow: "row wrap",
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  {this.state.template.contactInfoPage.contactInfo
+                    .filter((_) => !!_.show)
+                    .map((c, i) => {
+                      return this.renderContactInfoField(c, i);
+                    })}
+
+                  {this.props.template.options.enableTerms && (
+                    <div
+                      className="flex-100 form-group error-color-red text-center"
+                      style={{ order: 30 }}
+                    >
+                      <div className="layout-row layout-align-center-center">
+                        <div>
+                          <span className="checkbox mini">
+                            <label
+                              className="text-in checkbox-container"
+                              htmlFor="terms_and_conditions"
+                            >
+                              <input
+                                type="checkbox"
+                                className="terms-checkbox"
+                                id="terms_and_conditions"
+                                name="terms_and_conditions"
+                                data-parsley-required
+                                data-parsley-required-message={
+                                  this.state.template.formErrors.required
+                                }
+                              />
+                              <span className="checkmark" />
+                            </label>
+                          </span>
+                        </div>
+                        <div style={{ width: "10px" }} />
+                        <div>
+                          <div
+                            className="terms-label pointer cp"
+                            onClick={this.openTextModal}
+                          >
+                            <u
+                              style={{
+                                color: this.state.template.contactInfoPage.terms
+                                  .labelColor,
+                              }}
+                            >
+                              <i>
+                                {
+                                  this.state.template.contactInfoPage.terms
+                                    .label
+                                }
+                              </i>
+                            </u>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* {this.state.template.options.skipContactInfo && (
+                <div className="">
+                  <div className="col text-center">
+                    <button
+                      onClick={this.handleSkipButtonClick}
+                      type="button"
+                      className="btn bt-default skip-button"
+                      style={{
+                        color: this.state.template.contactInfoPage.buttons.skip
+                          .fontColor,
+                        backgroundColor: this.state.template.contactInfoPage
+                          .buttons.skip.bgColor
+                      }}
+                    >
+                      {this.state.template.contactInfoPage.buttons.skip.text}
+                    </button>
+                  </div>
+                </div>
+              )} */}
+            </fieldset>
+          </form>
+
+          <form
             ref="commentForm"
-            onSubmit={e => this.handleCommentFormSubmit(e)}
+            onSubmit={(e) => this.handleCommentFormSubmit(e)}
           >
             <fieldset>
               <div className="layout-row layout-align-center-center">
@@ -2611,14 +2736,14 @@ export default class FeedbackTemplateView extends Component {
                         backgroundColor: this.state.template
                           .additionalCommentPage.textBox.bgColor,
                         color: this.state.template.additionalCommentPage.textBox
-                          .fontColor
+                          .fontColor,
                       }}
                       name="response.comment"
                       value={this.state.response.comment}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.state.response.comment = e.currentTarget.value;
                         this.setState({
-                          response: this.state.response
+                          response: this.state.response,
                         });
                       }}
                       minLength={
@@ -2647,7 +2772,7 @@ export default class FeedbackTemplateView extends Component {
                         right: "10px",
                         bottom: "10px",
                         color: "#ccc",
-                        zIndex: 99999
+                        zIndex: 99999,
                       }}
                     >
                       {this.state.response.comment.length} /{" "}
@@ -2669,16 +2794,16 @@ export default class FeedbackTemplateView extends Component {
                       color: this.state.template.additionalCommentPage
                         .submitButton.fontColor,
                       backgroundColor: this.state.template.additionalCommentPage
-                        .submitButton.bgColor
+                        .submitButton.bgColor,
                     }}
-                    onMouseEnter={e => {
+                    onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = this.shadeColor(
                         this.state.template.additionalCommentPage.submitButton
                           .bgColor,
                         43
                       );
                     }}
-                    onMouseLeave={e => {
+                    onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = this.state.template.additionalCommentPage.submitButton.bgColor;
                     }}
                   >
@@ -2702,7 +2827,7 @@ export default class FeedbackTemplateView extends Component {
         className="contacts-page layout-column flex layout-fill"
         style={{
           backgroundColor: this.state.template.thankYouPage.bgColor,
-          border: "4px solid " + this.state.template.thankYouPage.bgColor
+          border: "4px solid " + this.state.template.thankYouPage.bgColor,
         }}
       >
         <div className="layout-column" style={{ height: "40%" }}>
@@ -2710,7 +2835,7 @@ export default class FeedbackTemplateView extends Component {
             data-section="header"
             style={{
               backgroundColor: this.state.template.thankYouPage.headerBg,
-              height: "17%"
+              height: "17%",
             }}
             className="template-header layout-row"
           >
@@ -2752,7 +2877,7 @@ export default class FeedbackTemplateView extends Component {
               color: this.state.template.thankYouPage.fontColor,
               fontSize: this.getTextSizeByValue(
                 this.state.template.thankYouPage.textSize
-              )
+              ),
             }}
           >
             {this.state.template.thankYouPage.text}
@@ -2768,24 +2893,24 @@ export default class FeedbackTemplateView extends Component {
         className="lang-page layout-column layout-fill flex"
         style={{
           backgroundColor: this.state.template.langPage.bgColor,
-          backgroundImage: `url(${this.state.template.langPage.bgImg})`
+          backgroundImage: `url(${this.state.template.langPage.bgImg})`,
         }}
       >
         <div
           className="dimmer layout-column layout-fill flex"
           style={{
             backgroundColor: this.state.template.langPage.bgDimmerColor,
-            opacity: this.state.template.langPage.bgDimmerOpacity
+            opacity: this.state.template.langPage.bgDimmerOpacity,
           }}
         />
 
         <div className="layout-column flex content">
           <span
             className={classNames(this.getRateIconClass(10) + " smiley", {
-              hide: !this.state.template.langPage.showSmiley
+              hide: !this.state.template.langPage.showSmiley,
             })}
             style={{
-              color: this.state.template.langPage.smileyColor
+              color: this.state.template.langPage.smileyColor,
             }}
           />
 
@@ -2798,7 +2923,7 @@ export default class FeedbackTemplateView extends Component {
                     className={classNames(
                       "lang-title",
                       {
-                        "show-title": lang.show
+                        "show-title": lang.show,
                       },
                       this.state.template.langPage.animatedTitleSize
                     )}
@@ -2817,7 +2942,7 @@ export default class FeedbackTemplateView extends Component {
                 <div
                   key={index}
                   className="lang-item layout-column flex"
-                  onClick={e => this.setLanguage(lang)}
+                  onClick={(e) => this.setLanguage(lang)}
                 >
                   <div className="flag layout-fill flex">
                     <img
@@ -2829,18 +2954,20 @@ export default class FeedbackTemplateView extends Component {
                     />
                     <br />
                     <span
-                      className={classNames("lang-name m10",
-                      this.state.template.langPage.titleSize)}
-											style={{
-												color: lang.labelColor,
-												fontStyle:
-													this.state.template.langPage.titleItalic && "italic",
-												fontWeight:
-													this.state.template.langPage.titleBold && "bold",
-												textDecoration:
-													this.state.template.langPage.titleUnderlined &&
-													"underline"
-											}}
+                      className={classNames(
+                        "lang-name m10",
+                        this.state.template.langPage.titleSize
+                      )}
+                      style={{
+                        color: lang.labelColor,
+                        fontStyle:
+                          this.state.template.langPage.titleItalic && "italic",
+                        fontWeight:
+                          this.state.template.langPage.titleBold && "bold",
+                        textDecoration:
+                          this.state.template.langPage.titleUnderlined &&
+                          "underline",
+                      }}
                     >
                       {lang.label}
                     </span>
@@ -2875,7 +3002,7 @@ export default class FeedbackTemplateView extends Component {
         className={classNames("modal-container size-" + this.props.size, {
           "single-service": this.isSingleService(),
           "hide-qmeter-logo":
-            this.state.template.company_id === blackListedCompanyID
+            this.state.template.company_id === blackListedCompanyID,
         })}
       >
         <div
@@ -2888,7 +3015,7 @@ export default class FeedbackTemplateView extends Component {
               tablet: this.props.showTablet,
               landscape: this.state.isLandscape,
               portrait: !this.state.isLandscape,
-              "single-service": this.isSingleService()
+              "single-service": this.isSingleService(),
             }
           )}
           dir={this.isRtl() ? "rtl" : "ltr"}
@@ -2917,7 +3044,7 @@ export default class FeedbackTemplateView extends Component {
                 width: "100%",
                 height: "100%",
                 backgroundColor: "rgba(255,255,255,1)",
-                zIndex: 99999
+                zIndex: 99999,
               }}
               className="layout-column layout-align-center-center"
             >
