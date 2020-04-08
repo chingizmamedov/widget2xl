@@ -317,7 +317,7 @@ export default class FeedbackTemplateView extends Component {
       },
       showLoader: false,
       showTextModal: false,
-      isLandscape: this.props.isLandscape
+      isLandscape: this.props.isLandscape,
     };
 
     if (this.isSingleService()) {
@@ -496,6 +496,10 @@ export default class FeedbackTemplateView extends Component {
     }
   }
 
+  componentDidUpdate() {
+    console.log("this.state", this.state)
+  }
+
   setLanguage = lang => {
     let translatedTemplate = this.props.translatedTemplates[lang.langID];
     this.setState({
@@ -553,6 +557,8 @@ export default class FeedbackTemplateView extends Component {
   componentWillUnmount() {
     $(window).off("resize");
   }
+
+
 
   resetInteractionTimeout = () => {
     let t = this;
@@ -1571,7 +1577,6 @@ export default class FeedbackTemplateView extends Component {
             <div className="flex" />
           </div>
         </div>
-
         <div
           data-section="services"
           className="services-top-container layout-column"
@@ -1649,34 +1654,29 @@ export default class FeedbackTemplateView extends Component {
                       )}
                       style={{
                           zIndex: service.isSelected ? "300" : "5",
-                          width: "auto",
                           right: "0",
-                          left: "unset",
+                        alignItems: "flex-end"
                       }}
                     >
-                      {console.log("service.rateBgColor", service.rateBgColor)}
                       <div
-                        className="rate-options-list layout-row flex"
+                        className={`rate-options-list rate-options-list-${service.id === 4823 ? this.state.template.ratePage.rateOption : 2} layout-row flex`}
                         style={{
                           backgroundColor: service.rateBgColor,
-                          boxShadow: `-10px 0px 18px 6px ${service.rateBgColor}`
+                          display: "flex"
                         }}
                       >
                         {service.isSelected &&
                           this.state.template.ratePage.rateOptions.map(
                             (rate, i) => {
-                              console.log("i", i);
-                              console.log("rate", rate);
-                              console.log("smile-size", this.state.template.ratePage.rateOptions.length);
-                              console.log("smile ", this.state.template.ratePage.rateOptions);
-                              console.log("this.state.template", this.state.template)
-                              return Constants.fn.isAvailableRateOption(
+                              console.log("service", service);
+
+                              return (Constants.fn.isAvailableRateOption(
                                 i,
                                 this.state.template
-                              ) ? (
+                              ) &&  ((service.id === 4823) || (service.id !== 4823 &&  i === 0 ) || (service.id !== 4823 &&  i === this.state.template.ratePage.rateOptions.length - 1))   )? (
                                 <div
                                   key={i}
-                                  className="rate-option-item flex layout-column layout-align-center-center"
+                                  className={`rate-option-item rate-option-item-${this.state.template.ratePage.rateOption} flex layout-column layout-align-center-center`}
                                   onClick={e =>
                                     this.handleRateClick(e, service, rate)
                                   }
@@ -1692,7 +1692,7 @@ export default class FeedbackTemplateView extends Component {
                                     <small
                                       style={{ color: service.rateFontColor }}
                                     >
-                                      {rate.label}
+                                      {service.id !== 4823 &&  i === 0  ? "Yes" : service.id !== 4823 &&  i === this.state.template.ratePage.rateOptions.length - 1 ? "No" : rate.label}
                                     </small>
                                   )}
                                 </div>
@@ -2509,7 +2509,9 @@ export default class FeedbackTemplateView extends Component {
       </div>
     );
   };
-
+/**
+ * Comment page
+ * */
   renderCommentsPage = () => {
     // const check =  this.checkingCommentPageEnabledByRate(this.state.response.rates, this.state.template.additionalCommentPage.ratesEnabled)
     //

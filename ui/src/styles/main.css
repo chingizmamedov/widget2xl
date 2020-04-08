@@ -733,6 +733,7 @@ body {
   bottom: 0;
   left: 0;
   z-index: 5;
+  width: 100%;
 }
 
 .feedback-template .services-list .service-item .rate-options-outer .rate-option-item {
@@ -1482,6 +1483,7 @@ body {
   .feedback-template .form-control.comment-textbox {
     height: 20vh;
   }
+
   .feedback-template
 .services-list
 .service-item
@@ -1555,4 +1557,38 @@ body {
 }
 .align-item-satrt {
   align-items: flex-start;
+}
+
+.rate-option-item {
+  width: 30%;
+}
+.rate-options-list-4, .rate-options-list-5, .rate-options-list-3 {
+  width: 100% !important;
+}
+.rate-options-list-2 {
+  width: 35% !important;
+}
+@media screen and ( max-width: 576px ) {
+
+
+
+
+
+}
+
+
+@media screen and ( max-width: 576px ) {
+  .rate-options-list {
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  .rate-options-list-5, .rate-options-list-4 {
+    width: 100%;
+  }
+  .rate-options-list-3 {
+     width: 70%;
+   }
+  .rate-options-list-2 {
+    width: 40% !important;
+  }
 }
