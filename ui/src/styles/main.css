@@ -1993,9 +1993,14 @@ body {
 	width: 35% !important;
 }
 .email-input-wrap {
-	width: 100%;
+	width: 50%;
 }
-
+.awesome-checkbox-wrap {
+	width: 50%;
+}
+.awesome-checkbox {
+	/* transform: translateY(-2px); */
+}
 @media screen and (max-width: 576px) {
 	.rate-options-list {
 		flex-grow: 1;
@@ -2015,7 +2020,7 @@ body {
 		width: 100%;
 	}
 	.email-input-wrap {
-		/* width: 50%; */
+		width: 100%;
 	}
 	.form-control.comment-textbox {
 		height: 13vh;
@@ -2030,5 +2035,12 @@ body {
 	}
 	.awesome-textarea {
 		height: 15vh;
+	}
+	.awesome-checkbox-wrap {
+		width: 100%;
+		justify-content: space-between;
+	}
+	.awesome-checkbox {
+		/* transform: translateY(2px); */
 	}
 }

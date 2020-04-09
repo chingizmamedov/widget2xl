@@ -1931,7 +1931,7 @@ export default class FeedbackTemplateView extends Component {
 					console.log("buda fieald --- ", field);
 					return (
 						<div
-							className="flex-100 form-group"
+							className="form-group awesome-checkbox-wrap"
 							key={i}
 							style={{
 								padding: "5px",
@@ -1961,9 +1961,11 @@ export default class FeedbackTemplateView extends Component {
 									<label
 										key={item}
 										style={{
-											marginRight: "10px",
+											marginLeft: "15px",
 											marginBottom: "0",
 											fontSize: "2.2vh",
+											display: "flex",
+											alignItems: "center",
 										}}
 									>
 										<input
@@ -1972,9 +1974,11 @@ export default class FeedbackTemplateView extends Component {
 											name={field.fieldName}
 											id=""
 											value={item}
+											className={"awesome-checkbox"}
 											style={{
-												marginRight: "4px",
-												width: "13px",
+												margin: " 0 4px",
+												width: "16px",
+												height: "16px",
 											}}
 										/>
 										<span className="radio-btn">{item}</span>
@@ -2750,7 +2754,7 @@ export default class FeedbackTemplateView extends Component {
 								className="layout-row layout-align-center-center"
 								style={{
 									maxWidth: "110%",
-									margin: "0 -5px",
+									margin: "5px -5px 0",
 								}}
 							>
 								<div
