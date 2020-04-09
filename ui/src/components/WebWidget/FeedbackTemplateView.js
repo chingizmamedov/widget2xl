@@ -272,7 +272,7 @@ const feedbackTemplateModel2 = {
 			bgColor: "#ffffff",
 			fontColor: "#ef1f36",
 			text: "Thank you for your Feedback !",
-			textSize: "md",
+			textSize: "sm",
 		},
 		company_id: 1,
 		created_at: 1487509226482,
@@ -1674,11 +1674,11 @@ export default class FeedbackTemplateView extends Component {
 																i,
 																this.state.template.ratePage.rateOptions.length,
 															)}
-															{service.id !== (4823 || 4822) &&
-															service.selectedRate.label == "Excellent"
+															{(service.id !== 4823 || service.id !==  4822) &&
+															service.selectedRate.label === "Excellent"
 																? "Yes"
-																: service.id !== (4823 || 4822) &&
-																  service.selectedRate.label == "Very Bad"
+																: (service.id !== 4823 || service.id !==  4822) &&
+																  service.selectedRate.label === "Very Bad"
 																? "No"
 																: service.selectedRate.label}
 														</small>
@@ -1700,7 +1700,7 @@ export default class FeedbackTemplateView extends Component {
 											{console.error(service.id)}
 											<div
 												className={`rate-options-list rate-options-list-${
-													service.id != (4822 && 4823) ? 2 : 5
+													service.id !== 4822 && service.id !== 4823 ? 2 : 5
 												} layout-row flex`}
 												style={{
 													backgroundColor: service.rateBgColor,
@@ -1722,9 +1722,9 @@ export default class FeedbackTemplateView extends Component {
 																i,
 																this.state.template,
 															) &&
-																(service.id === (4823 && 4822) ||
-																	(service.id !== (4823 && 4822) && i === 0) ||
-																	(service.id !== (4823 && 4822) &&
+																(service.id === 4823 || service.id === 4822 ||
+																	(service.id !== 4823 && service.id !== 4822 && i === 0) ||
+																	(service.id !== 4823 && service.id !==  4822 &&
 																		i ===
 																			this.state.template.ratePage.rateOptions
 																				.length -
@@ -1741,16 +1741,16 @@ export default class FeedbackTemplateView extends Component {
 																			this.getRateIconClass(rate),
 																			"qm-smile",
 																		)}
-																		style={{ color: service.rateFontColor }}
+																		style={{ color: service.rateFontColor}}
 																	/>
 																	{this.state.template.ratePage.showLabels && (
 																		<small
-																			style={{ color: service.rateFontColor }}
+																			style={{ color: service.rateFontColor, fontSize: "1.9vh"  }}
 																		>
 																			{console.log("service id", service.id)}
-																			{service.id !== (4823 && 4822) && i === 0
-																				? "Yes + test"
-																				: service.id !== (4823 && 4822) &&
+																			{service.id !== 4823 && service.id !== 4822 && i === 0
+																				? "Yes"
+																				: service.id !== 4823 && service.id !== 4822 &&
 																				  i ===
 																						this.state.template.ratePage
 																							.rateOptions.length -
