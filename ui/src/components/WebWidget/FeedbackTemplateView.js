@@ -885,8 +885,17 @@ export default class FeedbackTemplateView extends Component {
 	};
 
 	sendFeeback = () => {
+		console.log(
+			"FeedbackTemplateView -> sendFeeback -> this.state.response",
+			this.state.response,
+		);
 		let response = { ...this.state.response };
 		console.log("++++++++++ here is the final response");
+		console.log(
+			"FeedbackTemplateView -> sendFeeback -> this.state.response",
+			this.state.response,
+		);
+		console.log("FeedbackTemplateView -> sendFeeback -> response", response);
 		console.log(response);
 
 		if (
@@ -901,6 +910,8 @@ export default class FeedbackTemplateView extends Component {
 				(_) => _.fieldName != "terms_and_conditions",
 			);
 			response.contactInfo.map((_, i, a) => {
+				if (_.fieldName == "response.comment") {
+				}
 				if (_.fieldName == "phone") {
 					if (
 						_ &&
@@ -915,12 +926,19 @@ export default class FeedbackTemplateView extends Component {
 				}
 			});
 		}
+		response = {
+			...response,
+			contactInfo: response.contactInfo.filter((item) =>
+				item.fieldName !== "response.comment" ? item : null,
+			),
+		};
+		console.log("FeedbackTemplateView -> sendFeeback -> response", response);
+		// if (response.comment && typeof response.comment == "string") {
+		// 	response.comment = response.comment.replace(/\s+/g, " ");
+		// }
+		// response.comment = response.comment || null;
 
-		if (response.comment && typeof response.comment == "string") {
-			response.comment = response.comment.replace(/\s+/g, " ");
-		}
-		response.comment = response.comment || null;
-
+		// debugger;
 		if (this.state.widgetType == "web_widget" && this.props.webAccountID) {
 			return WebAccountService.postWebWidget(
 				{ id: this.props.webAccountID },
@@ -1909,14 +1927,60 @@ export default class FeedbackTemplateView extends Component {
 
 		switch (field.fieldType) {
 			case "select": {
-				if (field.placeHolder === "Call back request") {
+				if (field.placeHolder === "Call back request:") {
+					console.log("buda fieald --- ", field);
 					return (
 						<div
-							className="flex-50 form-group"
+							className="flex-100 form-group"
 							key={i}
-							style={{ padding: "5px", order: 0 }}
+							style={{
+								padding: "5px",
+								paddingLeft: "10px",
+								order: 0,
+								display: "flex",
+								alignItems: "center",
+								height: "7.7vh",
+							}}
 						>
-							here will be radio button
+							<span
+								style={{
+									color: "rgba(27,34,44,.72)",
+									fontSize: "2.2vh",
+									marginRight: "25px",
+								}}
+							>
+								{field.placeHolder}
+							</span>
+							<div
+								style={{
+									display: "flex",
+									alignItems: "center",
+								}}
+							>
+								{field.options.map((item) => (
+									<label
+										key={item}
+										style={{
+											marginRight: "10px",
+											marginBottom: "0",
+											fontSize: "2.2vh",
+										}}
+									>
+										<input
+											required={field.required}
+											type="radio"
+											name={field.fieldName}
+											id=""
+											value={item}
+											style={{
+												marginRight: "4px",
+												width: "13px",
+											}}
+										/>
+										<span className="radio-btn">{item}</span>
+									</label>
+								))}
+							</div>
 						</div>
 					);
 				} else {
@@ -1956,7 +2020,7 @@ export default class FeedbackTemplateView extends Component {
 						<div
 							className="flex-50 form-group"
 							key={i}
-							style={{ padding: "5px", order: 1 }}
+							style={{ padding: "5px", order: 3 }}
 						>
 							<input
 								autoComplete="off"
@@ -2042,7 +2106,7 @@ export default class FeedbackTemplateView extends Component {
 			case "email": {
 				return (
 					<div
-						className="flex-50 form-group"
+						className="form-group email-input-wrap"
 						key={i}
 						style={{ padding: "5px", order: 3 }}
 					>
@@ -2228,22 +2292,19 @@ export default class FeedbackTemplateView extends Component {
 	handleContactFormSubmit = (e) => {
 		e.preventDefault();
 
-		if (this.props.widgetType == "preview_widget") {
-			return false;
-		}
+		// if (this.props.widgetType == "preview_widget") {
+		// 	return false;
+		// }
 
 		if ($(this.refs.contactForm).parsley().validate()) {
-			this.goToPage("comments");
+			this.goToPage("thanks");
 		}
 	};
 
 	handleCommentFormSubmit = (e) => {
 		e.preventDefault();
 
-		if (
-			$(this.refs.commentForm).parsley().validate() &&
-			$(this.refs.contactForm).parsley().validate()
-		) {
+		if ($(this.refs.commentForm).parsley().validate()) {
 			this.goToPage("thanks");
 		}
 	};
@@ -2610,19 +2671,94 @@ export default class FeedbackTemplateView extends Component {
 					className="layout-column end"
 					style={{ height: "60%" }}
 				>
+					{/* // burda forma bashlayir */}
 					<form
 						ref="contactForm"
 						className="contact-form "
-						onSubmit={(e) => this.handleContactFormSubmit(e)}
+						onSubmit={(e) => this.handleCommentFormSubmit(e)}
+						style={{
+							marginTop: "0",
+						}}
 					>
-						<fieldset>
-							<div className="layout-row layout-align-center-center">
+						<fieldset
+							style={{
+								width: "90%",
+								margin: "auto",
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+							}}
+						>
+							<div className="">
+								<div className="form-group" style={{ position: "relative" }}>
+									<textarea
+										className="form-control comment-textbox awesome-textarea"
+										rows="6"
+										style={{
+											backgroundColor: this.state.template.additionalCommentPage
+												.textBox.bgColor,
+											color: this.state.template.additionalCommentPage.textBox
+												.fontColor,
+											height: "18vh",
+										}}
+										name="response.comment"
+										value={this.state.response.comment}
+										onChange={(e) => {
+											this.state.response.comment = e.currentTarget.value;
+											this.setState({
+												response: this.state.response,
+											});
+										}}
+										minLength={
+											this.state.template.additionalCommentPage.textBox
+												.minLength
+										}
+										maxLength={
+											this.state.template.additionalCommentPage.textBox
+												.maxLength
+										}
+										placeholder={
+											this.state.template.additionalCommentPage.textBox
+												.placeholder
+										}
+										data-parsley-required-message={
+											this.state.template.formErrors.required
+										}
+										data-parsley-length-message={
+											this.state.template.formErrors.tooShort
+										}
+									/>
+									<div
+										style={{
+											position: "absolute",
+											textAlign: "right",
+											right: "10px",
+											bottom: "10px",
+											color: "#ccc",
+											zIndex: 99999,
+										}}
+									>
+										{this.state.response.comment.length} /{" "}
+										{
+											this.state.template.additionalCommentPage.textBox
+												.maxLength
+										}
+									</div>
+								</div>
+							</div>
+							<div
+								className="layout-row layout-align-center-center"
+								style={{
+									maxWidth: "110%",
+									margin: "0 -5px",
+								}}
+							>
 								<div
-									className="flex-90"
 									style={{
 										display: "flex",
 										flexFlow: "row wrap",
 										justifyContent: "flex-start",
+										margin: "0 -5px 0 -5px",
 									}}
 								>
 									{this.state.template.contactInfoPage.contactInfo
@@ -2703,14 +2839,37 @@ export default class FeedbackTemplateView extends Component {
                   </div>
                 </div>
               )} */}
+
+							<button
+								type="submit"
+								className="btn bt-default submit-button"
+								style={{
+									color: this.state.template.additionalCommentPage.submitButton
+										.fontColor,
+									backgroundColor: this.state.template.additionalCommentPage
+										.submitButton.bgColor,
+									margin: "20px auto",
+								}}
+								onMouseEnter={(e) => {
+									e.currentTarget.style.backgroundColor = this.shadeColor(
+										this.state.template.additionalCommentPage.submitButton
+											.bgColor,
+										43,
+									);
+								}}
+								onMouseLeave={(e) => {
+									e.currentTarget.style.backgroundColor = this.state.template.additionalCommentPage.submitButton.bgColor;
+								}}
+							>
+								{this.state.template.additionalCommentPage.submitButton.text}
+							</button>
 						</fieldset>
 					</form>
-
 					<form
 						ref="commentForm"
 						onSubmit={(e) => this.handleCommentFormSubmit(e)}
 					>
-						<fieldset>
+						{/*<fieldset>
 							<div className="layout-row layout-align-center-center">
 								<div className="flex-90">
 									<div className="form-group" style={{ position: "relative" }}>
@@ -2767,7 +2926,7 @@ export default class FeedbackTemplateView extends Component {
 											}
 										</div>
 									</div>
-								</div>
+								</div> 
 							</div>
 
 							<div className="layout-row layout-align-center-center">
@@ -2796,10 +2955,10 @@ export default class FeedbackTemplateView extends Component {
 											this.state.template.additionalCommentPage.submitButton
 												.text
 										}
-									</button>
+									</button> 
 								</div>
 							</div>
-						</fieldset>
+						</fieldset> */}
 					</form>
 				</div>
 			</div>
