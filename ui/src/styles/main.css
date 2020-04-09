@@ -2006,6 +2006,9 @@ body {
 	right: 0;
 	height: 100%;
 }
+.awesome-title-forckeckbox {
+	font-size: 2.2vh;
+}
 @media screen and (max-width: 576px) {
 	.rate-options-list {
 		flex-grow: 1;
@@ -2023,6 +2026,7 @@ body {
 	}
 	.btn.bt-default.submit-button {
 		width: 100%;
+		margin-bottom: 30px;
 	}
 	.email-input-wrap {
 		width: 100%;
@@ -2047,5 +2051,14 @@ body {
 	}
 	.awesome-checkbox {
 		/* transform: translateY(2px); */
+	}
+	.flex.layout-column.layout-align-center-center.align-item-satrt {
+		font-size: 18px;
+	}
+	.feedback-template .contacts-page .submit-button, .feedback-template .comments-page .submit-button {
+		margin-bottom: 180px !important;
+	}
+	.feedback-template .services-list .service-item .service-inner span span {
+		font-size: 2.5vh;
 	}
 }

@@ -1649,7 +1649,7 @@ export default class FeedbackTemplateView extends Component {
 												<span
 													style={{
 														textAlign: "left",
-														padding: "10px 25px",
+														padding: "10px 25px 10px 5px",
 													}}
 												>
 													{service.name}
@@ -1674,10 +1674,10 @@ export default class FeedbackTemplateView extends Component {
 																i,
 																this.state.template.ratePage.rateOptions.length,
 															)}
-															{(service.id !== 4823 || service.id !==  4822) &&
+															{(service.id !== 4823 && service.id !==  4822) &&
 															service.selectedRate.label === "Excellent"
 																? "Yes"
-																: (service.id !== 4823 || service.id !==  4822) &&
+																: (service.id !== 4823 && service.id !==  4822) &&
 																  service.selectedRate.label === "Very Bad"
 																? "No"
 																: service.selectedRate.label}
@@ -1978,10 +1978,12 @@ export default class FeedbackTemplateView extends Component {
 							}}
 						>
 							<span
+								className={"awesome-title-forckeckbox"}
 								style={{
 									color: "rgba(27,34,44,.72)",
-									fontSize: "2.2vh",
-									marginRight: "25px",
+									fontSize: "2vh",
+									marginRight: "12px",
+									whiteSpace: "nowrap"
 								}}
 							>
 								{field.placeHolder}
@@ -2643,7 +2645,7 @@ export default class FeedbackTemplateView extends Component {
 						"4px solid " + this.state.template.additionalCommentPage.bgColor,
 				}}
 			>
-				<div className="layout-column start" style={{ height: "40%" }}>
+				<div className="layout-column start" style={{ height: this.state.currentPage === "comments" ? "30%" : "35%" }}>
 					<div
 						data-section="header"
 						style={{
@@ -2728,8 +2730,8 @@ export default class FeedbackTemplateView extends Component {
 								alignItems: "center",
 							}}
 						>
-							<div className="">
-								<div className="form-group" style={{ position: "relative" }}>
+							<div className="" style={{ width: "100%" }}>
+								<div className="form-group" style={{ position: "relative", width: "100%" }}>
 									<textarea
 										className="form-control comment-textbox awesome-textarea"
 										rows="6"
