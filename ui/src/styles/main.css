@@ -2001,6 +2001,11 @@ body {
 .awesome-checkbox {
 	/* transform: translateY(-2px); */
 }
+.selected-rate.layout-column.layout-align-center-center.flex-10 {
+	position: absolute;
+	right: 0;
+	height: 100%;
+}
 @media screen and (max-width: 576px) {
 	.rate-options-list {
 		flex-grow: 1;

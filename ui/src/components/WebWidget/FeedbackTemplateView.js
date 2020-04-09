@@ -1668,8 +1668,19 @@ export default class FeedbackTemplateView extends Component {
 													/>
 													{this.state.template.ratePage.showLabels && (
 														<small style={{ color: service.rateFontColor }}>
-															{console.log("sdasd", service, i)}
-															{service.selectedRate.label}
+															{console.warn(
+																"BAd",
+																service,
+																i,
+																this.state.template.ratePage.rateOptions.length,
+															)}
+															{service.id !== (4823 || 4822) &&
+															service.selectedRate.label == "Excellent"
+																? "Yes"
+																: service.id !== (4823 || 4822) &&
+																  service.selectedRate.label == "Very Bad"
+																? "No"
+																: service.selectedRate.label}
 														</small>
 													)}
 												</div>
@@ -1686,23 +1697,38 @@ export default class FeedbackTemplateView extends Component {
 												alignItems: "flex-end",
 											}}
 										>
+											{console.error(service.id)}
 											<div
-												className={`rate-options-list layout-row flex`}
+												className={`rate-options-list rate-options-list-${
+													service.id != (4822 && 4823) ? 2 : 5
+												} layout-row flex`}
 												style={{
 													backgroundColor: service.rateBgColor,
 													display: "flex",
 													width: "100%",
 												}}
 											>
+												{console.log(
+													"dino",
+													this.state.template.ratePage.rateOptions,
+												)}
 												{service.isSelected &&
 													this.state.template.ratePage.rateOptions.map(
 														(rate, i) => {
+															console.log("renderServicesPage -> rate", rate);
 															console.log("service", service);
 
 															return Constants.fn.isAvailableRateOption(
 																i,
 																this.state.template,
-															) ? (
+															) &&
+																(service.id === (4823 && 4822) ||
+																	(service.id !== (4823 && 4822) && i === 0) ||
+																	(service.id !== (4823 && 4822) &&
+																		i ===
+																			this.state.template.ratePage.rateOptions
+																				.length -
+																				1)) ? (
 																<div
 																	key={i}
 																	className={`rate-option-item rate-option-item-${this.state.template.ratePage.rateOption} flex layout-column layout-align-center-center`}
@@ -1721,7 +1747,16 @@ export default class FeedbackTemplateView extends Component {
 																		<small
 																			style={{ color: service.rateFontColor }}
 																		>
-																			{rate.label}
+																			{console.log("service id", service.id)}
+																			{service.id !== (4823 && 4822) && i === 0
+																				? "Yes + test"
+																				: service.id !== (4823 && 4822) &&
+																				  i ===
+																						this.state.template.ratePage
+																							.rateOptions.length -
+																							1
+																				? "No"
+																				: rate.label}
 																		</small>
 																	)}
 																</div>
