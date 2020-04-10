@@ -1881,14 +1881,15 @@ export default class FeedbackTemplateView extends Component {
                         className={classNames(
                           "flex layout-column layout-align-center-center align-item-satrt",
                           {
-                            "flex-90":
+                            "flex-80":
                               service.selectedRate != null &&
                               !service.isSelected,
                           },
                           {
-                            "flex-80":
-                              service.selectedRate == null &&
-                              this.isAlwaysOpenService(service.id),
+                            "flex-70":
+                              service.isSelected ||
+                              (service.selectedRate == null &&
+                                this.isAlwaysOpenService(service.id)),
                           }
                         )}
                         style={{ color: service.fontColor }}
@@ -1940,7 +1941,10 @@ export default class FeedbackTemplateView extends Component {
                         "rate-options-outer layout-column",
                         {
                           hide: this.isAlwaysOpenService(service.id)
-                            ? false
+                            ? !service.isSelected &&
+                              service.selectedRate != null
+                              ? true
+                              : false
                             : !service.isSelected,
                         }
                       )}
