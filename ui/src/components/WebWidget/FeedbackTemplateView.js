@@ -1898,6 +1898,8 @@ export default class FeedbackTemplateView extends Component {
                           style={{
                             textAlign: "left",
                             padding: "10px 25px 10px 5px",
+                            fontSize: "2vh",
+                            lineHeight: "20px"
                           }}
                         >
                           {service.name}
@@ -3311,6 +3313,10 @@ export default class FeedbackTemplateView extends Component {
   };
 
   renderThanksPage = () => {
+    let textArr = this.state.template.thankYouPage.text.split("!")
+    let text1 = `${textArr[0]} !`;
+    let text2 = `${textArr[1]}`;
+    
     return (
       <div
         className="contacts-page layout-column flex layout-fill"
@@ -3364,12 +3370,21 @@ export default class FeedbackTemplateView extends Component {
             className="text-center thanks-text overflow-hidden flex"
             style={{
               color: this.state.template.thankYouPage.fontColor,
+              marginTop: "8vh",
               fontSize: this.getTextSizeByValue(
                 this.state.template.thankYouPage.textSize
               ),
             }}
           >
-            {this.state.template.thankYouPage.text}
+            <span style={{
+              fontSize: "26px",
+              lineHeight: "20px"
+            }}>{text1}</span>
+            <br />
+            <span style={{
+              fontSize: "19px"
+            }}>{text2}</span>
+
           </div>
         </div>
       </div>
