@@ -579,7 +579,7 @@ export default class FeedbackTemplateView extends Component {
     t.interactionTimeout += 5;
 
     if (t.state.currentPage == "services" && t.interactionTimeout > 59) {
-      // window.location.reload();
+      window.location.reload();
     }
 
     if (
@@ -1900,7 +1900,7 @@ export default class FeedbackTemplateView extends Component {
                             padding: "10px 25px 10px 5px",
                           }}
                         >
-                          {service.name} {service.id}
+                          {service.name}
                         </span>
                       </span>
                       {service.selectedRate && (
