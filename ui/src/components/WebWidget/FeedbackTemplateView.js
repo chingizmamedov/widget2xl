@@ -1287,7 +1287,7 @@ export default class FeedbackTemplateView extends Component {
 	handleMarkClick = (e, mark) => {
 		let markPage = this.state.selectedMarkPage;
 
-		if(markPage.id === 1970) {
+		if(markPage.id === 1970 || markPage.id === 1963) {
 			if (this.isSingleRate()) {
 				this.goToPage("contacts");
 			}
@@ -1382,7 +1382,7 @@ export default class FeedbackTemplateView extends Component {
 		}
 		let markPage = this.state.selectedMarkPage;
 
-		if(markPage.id === 1970) {
+		if(markPage.id === 1970 || markPage.id === 1963) {
 			if (IE11) {
 				return (
 					<div
@@ -1487,7 +1487,7 @@ export default class FeedbackTemplateView extends Component {
 		let IE11 = !window.ActiveXObject && "ActiveXObject" in window;
 
 		if (IE11) {
-			return markPage ? markPage.id === 1970 ? (
+			return markPage ? markPage.id === 1970 || markPage.id === 1963 ? (
 				<div className="mark-page-content layout-column layout-align-center-center">
 					<div
 						className="mark-page-overlay"
@@ -1495,7 +1495,7 @@ export default class FeedbackTemplateView extends Component {
 					/>
 					<div
 						className="mark-page"
-						style={{ backgroundColor: markPage.bgColor }}
+						style={{ backgroundColor: markPage.bgColor, transform: "translateY(-60px)" }}
 					>
 						<div
 							className="mark-page-rate"
@@ -1532,8 +1532,11 @@ export default class FeedbackTemplateView extends Component {
 						</div>
 					</div>
 					<button style={{
-						bottom: "16px",
-						position: "absolute"
+						bottom: "11%",
+						position: "absolute",
+						width: "40%",
+						background: markPage.bgColor,
+						color:markPage.headerBg
 					}} onClick={(e) => this.handleMarkClick(e, item)} className={"btn"}>Ok</button>
 				</div>
 			) : (
@@ -1584,12 +1587,12 @@ export default class FeedbackTemplateView extends Component {
 			) : null;
 		}
 
-		return markPage ? markPage.id === 1970 ? (
+		return markPage ? markPage.id === 1970 || markPage.id === 1963 ? (
 			<div className="mark-page-content layout-column layout-align-center-center">
 				<div className="mark-page-overlay" onClick={this.handleHideMarkPage} />
 				<div
 					className="mark-page"
-					style={{ backgroundColor: markPage.bgColor }}
+					style={{ backgroundColor: markPage.bgColor, transform: "translateY(-60px)" }}
 				>
 					<div
 						className="mark-page-rate"
@@ -1630,8 +1633,11 @@ export default class FeedbackTemplateView extends Component {
 					</div>
 				</div>
 				<button style={{
-					bottom: "16px",
-					position: "absolute"
+					bottom: "10%",
+					position: "absolute",
+					width: "40%",
+					background: markPage.bgColor,
+					color:markPage.headerBg
 				}} onClick={(e) => this.handleMarkClick(e, item)} className={"btn"}>Ok</button>
 			</div>
 		) : (<div className="mark-page-content layout-column layout-align-center-center">
@@ -2472,7 +2478,6 @@ export default class FeedbackTemplateView extends Component {
 				);
 			}
 			case "text": {
-				console.log("bizim yeni poxumuz", field)
 				let {fieldName} = field
 				if(fieldName == "custom_field_2") {
 					return (
