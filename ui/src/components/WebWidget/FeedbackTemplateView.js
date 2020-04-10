@@ -320,6 +320,8 @@ export default class FeedbackTemplateView extends Component {
 			showLoader: false,
 			showTextModal: false,
 			isLandscape: this.props.isLandscape,
+			modifierSelectedMarks: {},
+			modifierSelectedMarksData:[]
 		};
 
 		if (this.isSingleService()) {
@@ -1201,11 +1203,10 @@ export default class FeedbackTemplateView extends Component {
 					}
 				}
 			}
-
 			this.setState(nextState, () => {
 				if (t.props.widgetType != "preview_widget") {
 					if (!markPage && this.isSingleRate()) {
-						this.goToPage("contacts");
+						this.goToPage("contacts")
 					}
 				}
 			});
@@ -1284,6 +1285,18 @@ export default class FeedbackTemplateView extends Component {
 	};
 
 	handleMarkClick = (e, mark) => {
+		let markPage = this.state.selectedMarkPage;
+
+		if(markPage.id === 1970) {
+			if (this.isSingleRate()) {
+				this.goToPage("contacts");
+			}
+			if (this.isMultiRate() && this.hasGivenRateForAllServices()) {
+				this.goToPage("contacts");
+			}
+
+			return null;
+		}
 		let t = this;
 		t.resetInteractionTimeout();
 
@@ -1299,6 +1312,8 @@ export default class FeedbackTemplateView extends Component {
 				a[i].mark_id = mark.id;
 			}
 		});
+
+		console.log("this state before", this.state)
 
 		this.setState(
 			{
@@ -1316,9 +1331,29 @@ export default class FeedbackTemplateView extends Component {
 				}
 			},
 		);
+		// simba
+
+	};
+
+	setModifierContent = name => {
+		const modifierArr =  [...this.state.modifierSelectedMarksData]
+		let index = modifierArr.indexOf(name)
+		if(index < 0) {
+			modifierArr.push(name)
+		} else {
+			modifierArr.splice(index, 1)
+		}
+
+
+		this.setState({
+			modifierSelectedMarksData: modifierArr
+		})
 	};
 
 	renderMarkListItem = (item, index, IE11, totalCount) => {
+		let data = this.state.modifierSelectedMarksData;
+		let service = this.state.template.servicesPage.services;
+		console.log("data", data);
 		let i = index;
 		let index1 = index + 1;
 
@@ -1345,58 +1380,163 @@ export default class FeedbackTemplateView extends Component {
 		if (!this.state.isLandscape) {
 			itemFlex = "flex-100";
 		}
+		let markPage = this.state.selectedMarkPage;
 
-		if (IE11) {
-			return (
-				<div
-					key={i}
-					className={classNames(
-						" mark layout-column layout-align-center-center",
-						this.createGradientBgColor(item.bgColor),
-					)}
-					onClick={(e) => this.handleMarkClick(e, item)}
-					style={{ display: "table", width: "100%", textAlign: "center" }}
-				>
-					<div style={{ display: "table-cell", verticalAlign: "middle" }}>
+		if(markPage.id === 1970) {
+			if (IE11) {
+				return (
+					<div
+						key={i}
+						className={classNames(
+							" mark layout-column layout-align-center-center",
+							this.createGradientBgColor(item.bgColor),
+						)}
+						onClick={() => {
+							this.setModifierContent(item.name)
+						}}
+						style={{ display: "table", width: "100%", textAlign: "center" }}
+					>
+						<div style={{ display: "table-cell", verticalAlign: "middle" }}>
 						<span className="md-display-1" style={{ color: item.fontColor }}>
 							{item.name}
 						</span>
+						</div>
 					</div>
-				</div>
-			);
-		} else {
-			return (
-				<div
-					key={i}
-					className={classNames(
-						itemFlex + " mark layout-column layout-align-center-center",
-					)}
-					onClick={(e) => this.handleMarkClick(e, item)}
-					style={{ order: order }}
-				>
+				);
+			} else {
+				return (
 					<div
-						className={classNames("flex layout-align-center-center mark-bg")}
-						style={{ background: item.bgColor }}
+						key={i}
+						className={classNames(
+							itemFlex + " mark layout-column layout-align-center-center",
+						)}
+						onClick={() => {
+							this.setModifierContent(item.name)
+						}}
+						style={{
+							order: order,
+						}}
 					>
+						<div
+							className={classNames("flex layout-align-center-center mark-bg")}
+							style={{ background: data.includes(item.name) ? service[0].rateBgColor : item.bgColor }}
+						>
 						<span
 							className="md-display-1 p10"
 							style={{ color: item.fontColor }}
 						>
 							{item.name}
 						</span>
+						</div>
 					</div>
-				</div>
-			);
+				);
+			}
+		} else {
+			if (IE11) {
+				return (
+					<div
+						key={i}
+						className={classNames(
+							" mark layout-column layout-align-center-center",
+							this.createGradientBgColor(item.bgColor),
+						)}
+						onClick={(e) => this.handleMarkClick(e, item)}
+						style={{ display: "table", width: "100%", textAlign: "center" }}
+					>
+						<div style={{ display: "table-cell", verticalAlign: "middle" }}>
+						<span className="md-display-1" style={{ color: item.fontColor }}>
+							{item.name}
+						</span>
+						</div>
+					</div>
+				);
+			} else {
+				return (
+					<div
+						key={i}
+						className={classNames(
+							itemFlex + " mark layout-column layout-align-center-center",
+						)}
+						onClick={(e) => this.handleMarkClick(e, item)}
+						style={{
+							order: order,
+						}}
+					>
+						<div
+							className={classNames("flex layout-align-center-center mark-bg")}
+							style={{ background: data.includes(item.name) ? service[0].rateBgColor : item.bgColor }}
+						>
+						<span
+							className="md-display-1 p10"
+							style={{ color: item.fontColor }}
+						>
+							{item.name}
+						</span>
+						</div>
+					</div>
+				);
+			}
 		}
+
 	};
 
 	renderMarkPageModal = () => {
 		let markPage = this.state.selectedMarkPage;
+		console.log("markPage", markPage);
 
 		let IE11 = !window.ActiveXObject && "ActiveXObject" in window;
 
 		if (IE11) {
-			return markPage ? (
+			return markPage ? markPage.id === 1970 ? (
+				<div className="mark-page-content layout-column layout-align-center-center">
+					<div
+						className="mark-page-overlay"
+						onClick={this.handleHideMarkPage}
+					/>
+					<div
+						className="mark-page"
+						style={{ backgroundColor: markPage.bgColor }}
+					>
+						<div
+							className="mark-page-rate"
+							style={{ backgroundColor: markPage.bgColor }}
+						>
+							<span
+								className={classNames(
+									"mn-rate-icon",
+									this.getRateIconClass(this.state.selectedRate),
+								)}
+								style={{ color: markPage.headerBg }}
+							/>
+						</div>
+						<div
+							className="mark-page-title"
+							style={{ backgroundColor: markPage.title.bgColor }}
+						>
+							<span
+								className="md-headline"
+								style={{ color: markPage.title.fontColor }}
+							>
+								{markPage.title.text}
+							</span>
+						</div>
+						<div className="mark-page-marks">
+							{markPage.marks.map((item, i) => {
+								return this.renderMarkListItem(
+									item,
+									i,
+									IE11,
+									markPage.marks.length,
+								);
+							})}
+						</div>
+					</div>
+					<button style={{
+						bottom: "16px",
+						position: "absolute"
+					}} onClick={(e) => this.handleMarkClick(e, item)} className={"btn"}>Ok</button>
+				</div>
+			) : (
 				<div className="mark-page-content layout-column layout-align-center-center">
 					<div
 						className="mark-page-overlay"
@@ -1444,7 +1584,7 @@ export default class FeedbackTemplateView extends Component {
 			) : null;
 		}
 
-		return markPage ? (
+		return markPage ? markPage.id === 1970 ? (
 			<div className="mark-page-content layout-column layout-align-center-center">
 				<div className="mark-page-overlay" onClick={this.handleHideMarkPage} />
 				<div
@@ -1489,8 +1629,57 @@ export default class FeedbackTemplateView extends Component {
 						})}
 					</div>
 				</div>
+				<button style={{
+					bottom: "16px",
+					position: "absolute"
+				}} onClick={(e) => this.handleMarkClick(e, item)} className={"btn"}>Ok</button>
 			</div>
-		) : null;
+		) : (<div className="mark-page-content layout-column layout-align-center-center">
+			<div className="mark-page-overlay" onClick={this.handleHideMarkPage} />
+			<div
+				className="mark-page"
+				style={{ backgroundColor: markPage.bgColor }}
+			>
+				<div
+					className="mark-page-rate"
+					style={{ backgroundColor: markPage.bgColor }}
+				>
+						<span
+							className={classNames(
+								"mn-rate-icon",
+								this.getRateIconClass(this.state.selectedRate),
+							)}
+							style={{ color: markPage.headerBg }}
+						/>
+				</div>
+				<div className="layout-row">
+					<div className="flex" />
+					<div
+						className="mark-page-title"
+						style={{ backgroundColor: markPage.title.bgColor }}
+					>
+							<span
+								className="md-headline"
+								style={{ color: markPage.title.fontColor }}
+							>
+								{markPage.title.text}
+							</span>
+					</div>
+					<div className="flex" />
+				</div>
+				<div className="mark-page-marks">
+					{markPage.marks.map((item, i) => {
+						return this.renderMarkListItem(
+							item,
+							i,
+							IE11,
+							markPage.marks.length,
+						);
+					})}
+				</div>
+			</div>
+
+		</div>) : null;
 	};
 
 	servicesHasImages = () => {
@@ -1674,10 +1863,12 @@ export default class FeedbackTemplateView extends Component {
 																i,
 																this.state.template.ratePage.rateOptions.length,
 															)}
-															{(service.id !== 4823 && service.id !==  4822) &&
+															{service.id !== 4823 &&
+															service.id !== 4822 &&
 															service.selectedRate.label === "Excellent"
 																? "Yes"
-																: (service.id !== 4823 && service.id !==  4822) &&
+																: service.id !== 4823 &&
+																  service.id !== 4822 &&
 																  service.selectedRate.label === "Very Bad"
 																? "No"
 																: service.selectedRate.label}
@@ -1722,9 +1913,13 @@ export default class FeedbackTemplateView extends Component {
 																i,
 																this.state.template,
 															) &&
-																(service.id === 4823 || service.id === 4822 ||
-																	(service.id !== 4823 && service.id !== 4822 && i === 0) ||
-																	(service.id !== 4823 && service.id !==  4822 &&
+																(service.id === 4823 ||
+																	service.id === 4822 ||
+																	(service.id !== 4823 &&
+																		service.id !== 4822 &&
+																		i === 0) ||
+																	(service.id !== 4823 &&
+																		service.id !== 4822 &&
 																		i ===
 																			this.state.template.ratePage.rateOptions
 																				.length -
@@ -1741,16 +1936,22 @@ export default class FeedbackTemplateView extends Component {
 																			this.getRateIconClass(rate),
 																			"qm-smile",
 																		)}
-																		style={{ color: service.rateFontColor}}
+																		style={{ color: service.rateFontColor }}
 																	/>
 																	{this.state.template.ratePage.showLabels && (
 																		<small
-																			style={{ color: service.rateFontColor, fontSize: "1.9vh"  }}
+																			style={{
+																				color: service.rateFontColor,
+																				fontSize: "1.9vh",
+																			}}
 																		>
 																			{console.log("service id", service.id)}
-																			{service.id !== 4823 && service.id !== 4822 && i === 0
+																			{service.id !== 4823 &&
+																			service.id !== 4822 &&
+																			i === 0
 																				? "Yes"
-																				: service.id !== 4823 && service.id !== 4822 &&
+																				: service.id !== 4823 &&
+																				  service.id !== 4822 &&
 																				  i ===
 																						this.state.template.ratePage
 																							.rateOptions.length -
@@ -1983,7 +2184,7 @@ export default class FeedbackTemplateView extends Component {
 									color: "rgba(27,34,44,.72)",
 									fontSize: "2vh",
 									marginRight: "12px",
-									whiteSpace: "nowrap"
+									whiteSpace: "nowrap",
 								}}
 							>
 								{field.placeHolder}
@@ -2271,26 +2472,52 @@ export default class FeedbackTemplateView extends Component {
 				);
 			}
 			case "text": {
-				return (
-					<div
-						className="flex-50 form-group"
-						key={i}
-						style={{ padding: "5px", order: 6 }}
-					>
-						<input
-							autoComplete="off"
-							required={field.required}
-							type="text"
-							className="form-control"
-							name={field.fieldName}
-							placeholder={field.placeHolder}
-							tabIndex={tabIndex}
-							maxLength="60"
-							data-parsley-required-message={errors.required}
-							data-parsley-length-message={errors.tooShort}
-						/>
-					</div>
-				);
+				console.log("bizim yeni poxumuz", field)
+				let {fieldName} = field
+				if(fieldName == "custom_field_2") {
+					return (
+						<div
+							className="flex-50 form-group"
+							key={i}
+							style={{ padding: "5px", order: 6, display: "none" }}
+						>
+							<input
+								autoComplete="off"
+								type="text"
+								className="form-control"
+								name={field.fieldName}
+								placeholder={field.placeHolder}
+								tabIndex={tabIndex}
+								maxLength="160"
+								data-parsley-required-message={errors.required}
+								data-parsley-length-message={errors.tooShort}
+								value={this.state.modifierSelectedMarksData.join(", ")}
+							/>
+						</div>
+					);
+				} else {
+					return (
+						<div
+							className="flex-50 form-group"
+							key={i}
+							style={{ padding: "5px", order: 6 }}
+						>
+							<input
+								autoComplete="off"
+								required={field.required}
+								type="text"
+								className="form-control"
+								name={field.fieldName}
+								placeholder={field.placeHolder}
+								tabIndex={tabIndex}
+								maxLength="60"
+								data-parsley-required-message={errors.required}
+								data-parsley-length-message={errors.tooShort}
+							/>
+						</div>
+					);
+				}
+
 			}
 			case "number": {
 				return (
@@ -2645,7 +2872,12 @@ export default class FeedbackTemplateView extends Component {
 						"4px solid " + this.state.template.additionalCommentPage.bgColor,
 				}}
 			>
-				<div className="layout-column start" style={{ height: this.state.currentPage === "comments" ? "30%" : "35%" }}>
+				<div
+					className="layout-column start"
+					style={{
+						height: this.state.currentPage === "comments" ? "30%" : "35%",
+					}}
+				>
 					<div
 						data-section="header"
 						style={{
@@ -2731,7 +2963,10 @@ export default class FeedbackTemplateView extends Component {
 							}}
 						>
 							<div className="" style={{ width: "100%" }}>
-								<div className="form-group" style={{ position: "relative", width: "100%" }}>
+								<div
+									className="form-group"
+									style={{ position: "relative", width: "100%" }}
+								>
 									<textarea
 										className="form-control comment-textbox awesome-textarea"
 										rows="6"
