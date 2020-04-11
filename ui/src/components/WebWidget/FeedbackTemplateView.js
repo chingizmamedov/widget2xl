@@ -1926,11 +1926,11 @@ export default class FeedbackTemplateView extends Component {
                               )}
                               {service.id !== 4823 &&
                               service.id !== 4822 &&
-                              service.selectedRate.label === "Excellent"
+                              service.selectedRate.value === 10
                                 ? "Yes"
                                 : service.id !== 4823 &&
                                   service.id !== 4822 &&
-                                  service.selectedRate.label === "Very Bad"
+                                  service.selectedRate.value === -10
                                 ? "No"
                                 : service.selectedRate.label}
                             </small>
@@ -3316,7 +3316,7 @@ export default class FeedbackTemplateView extends Component {
     let textArr = this.state.template.thankYouPage.text.split("!")
     let text1 = `${textArr[0]} !`;
     let text2 = `${textArr[1]}`;
-    
+
     return (
       <div
         className="contacts-page layout-column flex layout-fill"
