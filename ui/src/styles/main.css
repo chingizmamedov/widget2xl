@@ -1914,7 +1914,7 @@ body {
 		min-width: 8.5vw;
 	}
 	.feedback-template .services-list .service-item .service-inner span {
-		padding: 0;
+		padding: 0 20px;
 	}
 	.feedback-template .gender-selection-box {
 		height: 5.7vh;

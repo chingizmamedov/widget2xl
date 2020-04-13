@@ -1899,7 +1899,7 @@ export default class FeedbackTemplateView extends Component {
                             textAlign: "left",
                             padding: "10px 25px 10px 5px",
                             fontSize: "2vh",
-                            lineHeight: "20px"
+                            lineHeight: "2.6vh"
                           }}
                         >
                           {service.name}
@@ -2257,7 +2257,6 @@ export default class FeedbackTemplateView extends Component {
                   color: "rgba(27,34,44,.72)",
                   fontSize: "2vh",
                   marginRight: "12px",
-                  whiteSpace: "nowrap",
                 }}
               >
                 {field.placeHolder}
