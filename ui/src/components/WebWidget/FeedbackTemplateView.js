@@ -751,7 +751,7 @@ export default class FeedbackTemplateView extends Component {
     }
 
     if (page == "contacts" && !this.state.template.options.contactInfoPage) {
-      page = "comments";
+      page = "thanks";
     }
 
     if (
@@ -1218,14 +1218,14 @@ export default class FeedbackTemplateView extends Component {
           nextState.selectedMarkPage = markPage;
         } else {
           if (this.isMultiRate() && this.hasGivenRateForAllServices()) {
-            this.goToPage("contacts");
+            this.goToPage("comments");
           }
         }
       }
       this.setState(nextState, () => {
         if (t.props.widgetType != "preview_widget") {
           if (!markPage && this.isSingleRate()) {
-            this.goToPage("contacts");
+            this.goToPage("comments");
           }
         }
       });
@@ -1296,7 +1296,7 @@ export default class FeedbackTemplateView extends Component {
         },
         () => {
           if (this.isSingleRate()) {
-            this.goToPage("contacts");
+            this.goToPage("comments");
           }
         }
       );
@@ -1308,10 +1308,10 @@ export default class FeedbackTemplateView extends Component {
 
     if (markPage.id === 1970 || markPage.id === 1963) {
       if (this.isSingleRate()) {
-        this.goToPage("contacts");
+        this.goToPage("comments");
       }
       if (this.isMultiRate() && this.hasGivenRateForAllServices()) {
-        this.goToPage("contacts");
+        this.goToPage("comments");
       }
 
       return null;
@@ -1343,21 +1343,28 @@ export default class FeedbackTemplateView extends Component {
       },
       () => {
         if (this.isSingleRate()) {
-          this.goToPage("contacts");
+          this.goToPage("comments");
         }
         if (this.isMultiRate() && this.hasGivenRateForAllServices()) {
-          this.goToPage("contacts");
+          this.goToPage("comments");
         }
       }
     );
     // simba
   };
 
-  setModifierContent = (name) => {
+  setModifierContent = (name, id) => {
+    console.log("current id", id)
+    const {marks} = this.props.originalTemplate.markPages[0];
+    let modifierMarks = {}
+      Object.values(marks).forEach(item => {
+        modifierMarks[`${item.id}`] = item.name
+      });
+    console.log("modifierMarks", modifierMarks);
     const modifierArr = [...this.state.modifierSelectedMarksData];
-    let index = modifierArr.indexOf(name);
+    let index = modifierArr.indexOf(modifierMarks[`${id}`]);
     if (index < 0) {
-      modifierArr.push(name);
+      modifierArr.push(modifierMarks[`${id}`]);
     } else {
       modifierArr.splice(index, 1);
     }
@@ -1372,6 +1379,11 @@ export default class FeedbackTemplateView extends Component {
   };
 
   renderMarkListItem = (item, index, IE11, totalCount) => {
+    const {marks} = this.props.originalTemplate.markPages[0];
+    let modifierMarks = {}
+    Object.values(marks).forEach(item => {
+      modifierMarks[`${item.id}`] = item.name
+    });
     let data = this.state.modifierSelectedMarksData;
     let service = this.state.template.servicesPage.services;
     console.log("data", data);
@@ -1432,7 +1444,7 @@ export default class FeedbackTemplateView extends Component {
               itemFlex + " mark layout-column layout-align-center-center"
             )}
             onClick={() => {
-              this.setModifierContent(item.name);
+              this.setModifierContent(item.name, item.id);
             }}
             style={{
               order: order,
@@ -1441,7 +1453,7 @@ export default class FeedbackTemplateView extends Component {
             <div
               className={classNames("flex layout-align-center-center mark-bg")}
               style={{
-                background: data.includes(item.name)
+                background: data.includes(modifierMarks[`${item.id}`])
                   ? service[0].rateBgColor
                   : item.bgColor,
               }}
@@ -1756,6 +1768,7 @@ export default class FeedbackTemplateView extends Component {
   };
 
   renderServicesPage = () => {
+    const {langID} = this.state.selectedLanguage;
     return (
       <div
         className="services-page layout-column layout-fill flex"
@@ -1945,11 +1958,11 @@ export default class FeedbackTemplateView extends Component {
                               {service.id !== 4823 &&
                               service.id !== 4822 &&
                               service.selectedRate.value === 10
-                                ? "Yes"
+                                ? langID === "ar" ? "نع" : "Yes"
                                 : service.id !== 4823 &&
                                   service.id !== 4822 &&
                                   service.selectedRate.value === -10
-                                ? "No"
+                                ? langID === "ar" ? "لا" : "No"
                                 : service.selectedRate.label}
                             </small>
                           )}
@@ -2040,14 +2053,14 @@ export default class FeedbackTemplateView extends Component {
                                       {service.id !== 4823 &&
                                       service.id !== 4822 &&
                                       i === 0
-                                        ? "Yes"
+                                        ? langID === "ar" ? "نعم": "Yes"
                                         : service.id !== 4823 &&
                                           service.id !== 4822 &&
                                           i ===
                                             this.state.template.ratePage
                                               .rateOptions.length -
                                               1
-                                        ? "No"
+                                        ? langID === "ar" ? "لا" : "No"
                                         : rate.label}
                                     </small>
                                   )}
@@ -3549,7 +3562,7 @@ export default class FeedbackTemplateView extends Component {
             this.state.currentPage == "rates" &&
             this.renderSingleModeRatesPage()}
 
-          {this.state.currentPage == "contacts" && this.renderContactsPage()}
+          {this.state.currentPage == "contacts" && this.renderCommentsPage()}
 
           {this.state.currentPage == "comments" && this.renderCommentsPage()}
           {this.state.currentPage == "thanks" && this.renderThanksPage()}
