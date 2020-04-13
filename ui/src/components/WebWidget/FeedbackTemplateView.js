@@ -297,7 +297,6 @@ export default class FeedbackTemplateView extends Component {
     super(props);
 
     this.interactionTimeout = 0;
-
     this.state = {
       location: this.props.location,
       widgetType: this.props.widgetType,
@@ -324,6 +323,7 @@ export default class FeedbackTemplateView extends Component {
       isLandscape: this.props.isLandscape,
       modifierSelectedMarks: {},
       modifierSelectedMarksData: [],
+      comparsionCustomFields: {}
     };
 
     if (this.isSingleService()) {
@@ -409,6 +409,7 @@ export default class FeedbackTemplateView extends Component {
   };
 
   componentDidMount() {
+
     let t = this;
 
     if (this.checkAutoRate()) {
@@ -500,10 +501,31 @@ export default class FeedbackTemplateView extends Component {
       // start titles animating
       window.setInterval(t.showNextTitle, 3000);
     }
+
+    // const {}
   }
 
   componentDidUpdate() {
-    console.log("this.state", this.state);
+    console.log('this.state',this.state);
+    const langID =  this.state.selectedLanguage.langID;
+    const comparsionLength = Object.keys(this.state.comparsionCustomFields).length;
+    if(langID !== null && comparsionLength === 0) {
+      const {contactInfo} = this.props.originalTemplate.contactInfoPage;
+      const needFields = contactInfo.filter(item => item.fieldName === "custom_field_1");
+      const currFields = this.state.template.contactInfoPage.contactInfo
+          .filter(item => item.fieldName === "custom_field_1")
+          .map(item => item.options);
+      console.log("currFields", currFields);
+      const {options} = needFields[0]
+      console.log("options",options)
+      let customObject = {};
+      console.log("needFields",needFields);
+      customObject[`${currFields[0][0]}`] = options[0];
+      customObject[`${currFields[0][1]}`] = options[1];
+      this.setState({
+        comparsionCustomFields: customObject
+      });
+    }
   }
 
   setLanguage = (lang) => {
@@ -937,12 +959,7 @@ export default class FeedbackTemplateView extends Component {
       ),
     };
     console.log("FeedbackTemplateView -> sendFeeback -> response", response);
-    // if (response.comment && typeof response.comment == "string") {
-    // 	response.comment = response.comment.replace(/\s+/g, " ");
-    // }
-    // response.comment = response.comment || null;
 
-    // debugger;
     if (this.state.widgetType == "web_widget" && this.props.webAccountID) {
       return WebAccountService.postWebWidget(
         { id: this.props.webAccountID },
@@ -1896,18 +1913,19 @@ export default class FeedbackTemplateView extends Component {
                       >
                         <span
                           style={{
-                            textAlign: "left",
+                            // textAlign: "left",
                             padding: "10px 25px 10px 5px",
                             fontSize: "2vh",
                             lineHeight: "2.6vh"
                           }}
+                          className={"zambaq"}
                         >
                           {service.name}
                         </span>
                       </span>
                       {service.selectedRate && (
                         <div
-                          className="selected-rate layout-column layout-align-center-center flex-10"
+                          className="selected-rate layout-column layout-align-center-center flex-10 selected-rate-tutu"
                           style={{ backgroundColor: service.rateBgColor }}
                         >
                           <span
@@ -2236,7 +2254,7 @@ export default class FeedbackTemplateView extends Component {
 
     switch (field.fieldType) {
       case "select": {
-        if (field.placeHolder === "Call back request:") {
+        if (field.fieldName === "custom_field_1") {
           console.log("buda fieald --- ", field);
           return (
             <div
@@ -2283,7 +2301,7 @@ export default class FeedbackTemplateView extends Component {
                       type="radio"
                       name={field.fieldName}
                       id=""
-                      value={item}
+                      value={this.state.comparsionCustomFields[item]}
                       className={"awesome-checkbox"}
                       style={{
                         margin: " 0 4px",

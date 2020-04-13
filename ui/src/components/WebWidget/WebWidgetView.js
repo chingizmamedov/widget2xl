@@ -81,6 +81,7 @@ export default class WebWidgetView extends Component {
 						languages={this.state.account.languages}
 						translatedTemplates={this.state.account.translatedTemplates}
 						location={this.props.location}
+						originalTemplate={this.state.account.originalTemplate}
 					/>
 				)}
 
