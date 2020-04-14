@@ -1086,7 +1086,7 @@ export default class FeedbackTemplateView extends Component {
   };
 
   handleNextButtonClick = () => {
-    this.goToPage("contacts");
+    this.goToPage("comments");
   };
 
   handleServiceMouseDown = (e, service) => {
@@ -1283,6 +1283,7 @@ export default class FeedbackTemplateView extends Component {
       this.state.template.servicesPage.services.length
     );
   };
+
   hasGivenAtLeastOneRate = () => {
     return this.state.response.rates.length;
   };
@@ -2661,9 +2662,6 @@ export default class FeedbackTemplateView extends Component {
   handleContactFormSubmit = (e) => {
     e.preventDefault();
 
-    // if (this.props.widgetType == "preview_widget") {
-    // 	return false;
-    // }
 
     if ($(this.refs.contactForm).parsley().validate()) {
       this.goToPage("thanks");
@@ -2673,7 +2671,7 @@ export default class FeedbackTemplateView extends Component {
   handleCommentFormSubmit = (e) => {
     e.preventDefault();
 
-    if ($(this.refs.commentForm).parsley().validate()) {
+    if ($(this.refs.commentForm).parsley().validate() && $(this.refs.contactForm).parsley().validate()) {
       this.goToPage("thanks");
     }
   };
@@ -2957,12 +2955,7 @@ export default class FeedbackTemplateView extends Component {
    * Comment page
    * */
   renderCommentsPage = () => {
-    // const check =  this.checkingCommentPageEnabledByRate(this.state.response.rates, this.state.template.additionalCommentPage.ratesEnabled)
-    //
-    // if (check) {
-    //    return console.log('thanks')
-    //    this.goToPage('thanks')
-    // }
+
 
     return (
       <div
@@ -3197,25 +3190,7 @@ export default class FeedbackTemplateView extends Component {
                 </div>
               </div>
 
-              {/* {this.state.template.options.skipContactInfo && (
-                <div className="">
-                  <div className="col text-center">
-                    <button
-                      onClick={this.handleSkipButtonClick}
-                      type="button"
-                      className="btn bt-default skip-button"
-                      style={{
-                        color: this.state.template.contactInfoPage.buttons.skip
-                          .fontColor,
-                        backgroundColor: this.state.template.contactInfoPage
-                          .buttons.skip.bgColor
-                      }}
-                    >
-                      {this.state.template.contactInfoPage.buttons.skip.text}
-                    </button>
-                  </div>
-                </div>
-              )} */}
+
 
               <button
                 type="submit"
@@ -3246,96 +3221,7 @@ export default class FeedbackTemplateView extends Component {
             ref="commentForm"
             onSubmit={(e) => this.handleCommentFormSubmit(e)}
           >
-            {/*<fieldset>
-							<div className="layout-row layout-align-center-center">
-								<div className="flex-90">
-									<div className="form-group" style={{ position: "relative" }}>
-										<textarea
-											className="form-control comment-textbox"
-											rows="6"
-											style={{
-												backgroundColor: this.state.template
-													.additionalCommentPage.textBox.bgColor,
-												color: this.state.template.additionalCommentPage.textBox
-													.fontColor,
-											}}
-											name="response.comment"
-											value={this.state.response.comment}
-											onChange={(e) => {
-												this.state.response.comment = e.currentTarget.value;
-												this.setState({
-													response: this.state.response,
-												});
-											}}
-											minLength={
-												this.state.template.additionalCommentPage.textBox
-													.minLength
-											}
-											maxLength={
-												this.state.template.additionalCommentPage.textBox
-													.maxLength
-											}
-											placeholder={
-												this.state.template.additionalCommentPage.textBox
-													.placeholder
-											}
-											data-parsley-required-message={
-												this.state.template.formErrors.required
-											}
-											data-parsley-length-message={
-												this.state.template.formErrors.tooShort
-											}
-										/>
-										<div
-											style={{
-												position: "absolute",
-												textAlign: "right",
-												right: "10px",
-												bottom: "10px",
-												color: "#ccc",
-												zIndex: 99999,
-											}}
-										>
-											{this.state.response.comment.length} /{" "}
-											{
-												this.state.template.additionalCommentPage.textBox
-													.maxLength
-											}
-										</div>
-									</div>
-								</div> 
-							</div>
 
-							<div className="layout-row layout-align-center-center">
-								<div>
-									<button
-										type="submit"
-										className="btn bt-default btn-space submit-button"
-										style={{
-											color: this.state.template.additionalCommentPage
-												.submitButton.fontColor,
-											backgroundColor: this.state.template.additionalCommentPage
-												.submitButton.bgColor,
-										}}
-										onMouseEnter={(e) => {
-											e.currentTarget.style.backgroundColor = this.shadeColor(
-												this.state.template.additionalCommentPage.submitButton
-													.bgColor,
-												43,
-											);
-										}}
-										onMouseLeave={(e) => {
-											e.currentTarget.style.backgroundColor = this.state.template.additionalCommentPage.submitButton.bgColor;
-										}}
-									>
-										{
-											this.state.template.additionalCommentPage.submitButton
-												.text
-										}
-									</button> 
-								</div>
-							</div>
-						</fieldset> */}
           </form>
         </div>
       </div>
