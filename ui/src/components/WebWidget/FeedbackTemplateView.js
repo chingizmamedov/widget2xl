@@ -1928,7 +1928,7 @@ export default class FeedbackTemplateView extends Component {
                         <span
                           style={{
                             // textAlign: "left",
-                            padding: "10px 25px 10px 5px",
+                            padding: langID === "ar" ? "10px 5px 10px 28px" : "10px 29px 10px 5px",
                             fontSize: "2vh",
                             lineHeight: "2.6vh"
                           }}
@@ -2260,6 +2260,17 @@ export default class FeedbackTemplateView extends Component {
     });
   };
 
+  moveCaretAtEnd(e) {
+    e.preventDefault();
+    let temp_value = e.target.value;
+    e.target.value = '';
+    // e.target.value = temp_value;
+    let d = e.target;
+    setTimeout(() => {
+      d.value = temp_value;
+    }, 10)
+  }
+
   renderContactInfoField = (field, index) => {
     let t = this;
     const tabIndex = index + 1;
@@ -2415,6 +2426,7 @@ export default class FeedbackTemplateView extends Component {
         );
       }
       case "phone": {
+        const { langID } = this.state.selectedLanguage;
         let _prs = {};
         let _v = "+" + (field.defaultCountryCode || "");
         if (this.props.widgetType == "preview_widget") {
@@ -2445,6 +2457,14 @@ export default class FeedbackTemplateView extends Component {
               data-parsley-required-message={errors.required}
               data-parsley-length-message={errors.tooShort}
               data-parsley-pattern-message={errors.phoneFormat}
+              onChange={e => {
+                console.log(e.target.value);
+              }}
+              style={{
+                direction: "ltr",
+                textAlign: langID === "ar" ? "right" : "left"
+              }}
+              onFocus={this.moveCaretAtEnd}
             />
           </div>
         );
@@ -2469,6 +2489,7 @@ export default class FeedbackTemplateView extends Component {
               data-parsley-required-message={errors.required}
               data-parsley-length-message={errors.tooShort}
               data-parsley-type-message={errors.emailFormat}
+
             />
           </div>
         );
