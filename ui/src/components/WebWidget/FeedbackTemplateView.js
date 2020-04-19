@@ -28,7 +28,7 @@ import Cookie from "js-cookie";
 import WebAccountService from "../../services/WebAccountService";
 import MarketingService from "../../services/MarketingService";
 
-const alwaysOpenServiceIDS = [4822, 4823];
+const alwaysOpenServiceIDS = [4822, 4823, 4846, 4851];
 
 const feedbackTemplateModel2 = {
   properties: {
@@ -1307,7 +1307,7 @@ export default class FeedbackTemplateView extends Component {
   handleMarkClick = (e, mark) => {
     let markPage = this.state.selectedMarkPage;
 
-    if (markPage.id === 1970 || markPage.id === 1963) {
+    if (markPage.id === 1970 || markPage.id === 1963 || markPage.id === 1973) {
       if (this.isSingleRate()) {
         this.goToPage("comments");
       }
@@ -1388,6 +1388,7 @@ export default class FeedbackTemplateView extends Component {
     let data = this.state.modifierSelectedMarksData;
     let service = this.state.template.servicesPage.services;
     console.log("data", data);
+    console.log("modifierMarks", modifierMarks);
     let i = index;
     let index1 = index + 1;
 
@@ -1416,7 +1417,7 @@ export default class FeedbackTemplateView extends Component {
     }
     let markPage = this.state.selectedMarkPage;
 
-    if (markPage.id === 1970 || markPage.id === 1963) {
+    if (markPage.id === 1970 || markPage.id === 1963 || markPage.id === 1973) {
       if (IE11) {
         return (
           <div
@@ -1529,7 +1530,7 @@ export default class FeedbackTemplateView extends Component {
 
     if (IE11) {
       return markPage ? (
-        markPage.id === 1970 || markPage.id === 1963 ? (
+        markPage.id === 1970 || markPage.id === 1963 || markPage.id === 1973 ? (
           <div className="mark-page-content layout-column layout-align-center-center">
             <div
               className="mark-page-overlay"
@@ -1640,7 +1641,7 @@ export default class FeedbackTemplateView extends Component {
     }
 
     return markPage ? (
-      markPage.id === 1970 || markPage.id === 1963 ? (
+      markPage.id === 1970 || markPage.id === 1963 || markPage.id === 1973 ? (
         <div className="mark-page-content layout-column layout-align-center-center">
           <div
             className="mark-page-overlay"
@@ -1958,10 +1959,14 @@ export default class FeedbackTemplateView extends Component {
                               )}
                               {service.id !== 4823 &&
                               service.id !== 4822 &&
+                              service.id !== 4846 &&
+                              service.id !== 4851 &&
                               service.selectedRate.value === 10
                                 ? langID === "ar" ? "نع" : "Yes"
                                 : service.id !== 4823 &&
                                   service.id !== 4822 &&
+                                  service.id !== 4846 &&
+                                  service.id !== 4851 &&
                                   service.selectedRate.value === -10
                                 ? langID === "ar" ? "لا" : "No"
                                 : service.selectedRate.label}
@@ -1994,7 +1999,7 @@ export default class FeedbackTemplateView extends Component {
                     >
                       <div
                         className={`rate-options-list rate-options-list-${
-                          service.id !== 4822 && service.id !== 4823 ? 2 : 5
+                          service.id !== 4822 && service.id !== 4823 && service.id !== 4846 && service.id !== 4851 ? 2 : 5
                         } layout-row flex`}
                         style={{
                           backgroundColor: service.rateBgColor,
@@ -2020,11 +2025,17 @@ export default class FeedbackTemplateView extends Component {
                               ) &&
                                 (service.id === 4823 ||
                                   service.id === 4822 ||
+                                    service.id === 4846 ||
+                                    service.id === 4851 ||
                                   (service.id !== 4823 &&
                                     service.id !== 4822 &&
+                                      service.id !== 4846 &&
+                                      service.id !== 4851 &&
                                     i === 0) ||
                                   (service.id !== 4823 &&
                                     service.id !== 4822 &&
+                                      service.id !== 4846 &&
+                                      service.id !== 4851 &&
                                     i ===
                                       this.state.template.ratePage.rateOptions
                                         .length -
@@ -2053,10 +2064,14 @@ export default class FeedbackTemplateView extends Component {
                                       {console.log("service id", service.id)}
                                       {service.id !== 4823 &&
                                       service.id !== 4822 &&
+                                      service.id !== 4846 &&
+                                      service.id !== 4851 &&
                                       i === 0
                                         ? langID === "ar" ? "نعم": "Yes"
                                         : service.id !== 4823 &&
                                           service.id !== 4822 &&
+                                          service.id !== 4846 &&
+                                          service.id !== 4851 &&
                                           i ===
                                             this.state.template.ratePage
                                               .rateOptions.length -
