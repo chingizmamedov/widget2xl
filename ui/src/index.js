@@ -51,10 +51,6 @@ switch (subdomainName) {
     componentToRender = MarketingWidgetView;
     break;
   }
-  case "2xlwgt": {
-    componentToRender = MarketingWidgetView;
-    break;
-  }
   case "um": {
     componentToRender = UserMappedView;
     break;
