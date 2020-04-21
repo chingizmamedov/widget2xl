@@ -932,19 +932,20 @@ export default class FeedbackTemplateView extends Component {
     }
 
     if (!this.state.isContactFormSkipped) {
+
       response.contactInfo = this.state.contactFormData.filter(
-        (_) => _.fieldName != "terms_and_conditions"
+        (_) => _.fieldName !== "terms_and_conditions"
       );
       response.contactInfo.map((_, i, a) => {
-        if (_.fieldName == "response.comment") {
+        if (_.fieldName === "response.comment") {
         }
-        if (_.fieldName == "phone") {
+        if (_.fieldName === "phone") {
           if (
             _ &&
-            _.fieldValue ==
+            _.fieldValue ===
               "+" +
                 this.state.template.contactInfoPage.contactInfo.find(
-                  (_) => _.fieldName == "phone"
+                  (_) => _.fieldName === "phone"
                 ).defaultCountryCode
           ) {
             a.splice(i, 1);
@@ -952,12 +953,38 @@ export default class FeedbackTemplateView extends Component {
         }
       });
     }
+    debugger;
+    let {modifierSelectedMarksData} = this.state;
+    const {contactInfo} = response;
+    console.log('modifierSelectedMarksData', modifierSelectedMarksData)
+    console.log('contactInfo', contactInfo)
+    let found = false;
+
+    if(modifierSelectedMarksData.length > 0) {
+      for(var i = 0; i < contactInfo.length; i++) {
+        if (contactInfo[i].fieldName == 'custom_field_2') {
+          found = true;
+          break;
+        }
+      }
+    }
+    console.log('found', found)
+    if(!found) {
+      response.contactInfo.push({
+        fieldName: "custom_field_2",
+        fieldValue:  modifierSelectedMarksData.join(", ")
+      })
+    }
+
+  console.log("response", response)
+
     response = {
       ...response,
       contactInfo: response.contactInfo.filter((item) =>
         item.fieldName !== "response.comment" ? item : null
       ),
     };
+
     console.log("FeedbackTemplateView -> sendFeeback -> response", response);
 
     if (this.state.widgetType == "web_widget" && this.props.webAccountID) {
@@ -2991,7 +3018,6 @@ export default class FeedbackTemplateView extends Component {
    * Comment page
    * */
   renderCommentsPage = () => {
-
 
     return (
       <div
